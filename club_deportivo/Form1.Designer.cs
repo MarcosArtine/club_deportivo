@@ -1,6 +1,6 @@
 ﻿namespace club_deportivo
 {
-    partial class Form1
+    partial class frmClubDeportivo
     {
         /// <summary>
         ///  Required designer variable.
@@ -64,6 +64,7 @@
             btnSalir.TabIndex = 4;
             btnSalir.Text = "SALIR";
             btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // btnActividad
             // 
@@ -75,6 +76,7 @@
             btnActividad.TabIndex = 3;
             btnActividad.Text = "ACTIVIDAD";
             btnActividad.UseVisualStyleBackColor = false;
+            btnActividad.Click += btnActividad_Click;
             // 
             // btnSocios
             // 
@@ -98,6 +100,7 @@
             btnPagos.TabIndex = 1;
             btnPagos.Text = "PAGOS";
             btnPagos.UseVisualStyleBackColor = false;
+            btnPagos.Click += btnPagos_Click;
             // 
             // btnInicio
             // 
@@ -120,6 +123,7 @@
             btnRegistro.TabIndex = 1;
             btnRegistro.Text = "REGISTRO";
             btnRegistro.UseVisualStyleBackColor = false;
+            btnRegistro.Click += btnRegistro_Click;
             // 
             // pictureBox1
             // 
@@ -131,7 +135,7 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // Form1
+            // frmClubDeportivo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -139,8 +143,8 @@
             Controls.Add(pictureBox1);
             Controls.Add(btnRegistro);
             Controls.Add(pnlBarra);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "frmClubDeportivo";
+            Text = "Club Deportivo";
             pnlBarra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
