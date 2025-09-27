@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace club_deportivo.InterfacesGraficas
 {
-    public partial class Pagos : Form
+    public partial class frmPagos : Form
     {
-        public Pagos()
+        public frmPagos()
         {
             InitializeComponent();
         }

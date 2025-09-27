@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pnlBarra = new Panel();
             btnSalir = new Button();
             btnActividad = new Button();
@@ -35,9 +36,9 @@
             btnPagos = new Button();
             btnInicio = new Button();
             btnRegistro = new Button();
-            pictureBox1 = new PictureBox();
+            pictureBox = new PictureBox();
             pnlBarra.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
             // pnlBarra
@@ -64,6 +65,7 @@
             btnSalir.TabIndex = 4;
             btnSalir.Text = "SALIR";
             btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // btnActividad
             // 
@@ -75,6 +77,7 @@
             btnActividad.TabIndex = 3;
             btnActividad.Text = "ACTIVIDAD";
             btnActividad.UseVisualStyleBackColor = false;
+            btnActividad.Click += btnActividad_Click;
             // 
             // btnSocios
             // 
@@ -98,6 +101,7 @@
             btnPagos.TabIndex = 1;
             btnPagos.Text = "PAGOS";
             btnPagos.UseVisualStyleBackColor = false;
+            btnPagos.Click += btnPagos_Click;
             // 
             // btnInicio
             // 
@@ -109,6 +113,7 @@
             btnInicio.TabIndex = 0;
             btnInicio.Text = "INICIO";
             btnInicio.UseVisualStyleBackColor = false;
+            btnInicio.Click += btnInicio_Click;
             // 
             // btnRegistro
             // 
@@ -123,26 +128,26 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Sin_título;
-            pictureBox1.Location = new Point(325, 108);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(292, 233);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            pictureBox.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox.Location = new Point(325, 108);
+            pictureBox.Name = "pictureBox1";
+            pictureBox.Size = new Size(292, 233);
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox.TabIndex = 2;
+            pictureBox.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(pictureBox1);
+            Controls.Add(pictureBox);
             Controls.Add(btnRegistro);
             Controls.Add(pnlBarra);
             Name = "Form1";
             Text = "Form1";
             pnlBarra.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -155,6 +160,6 @@
         private Button btnPagos;
         private Button btnInicio;
         private Button btnRegistro;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBox;
     }
 }

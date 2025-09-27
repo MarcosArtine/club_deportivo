@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btnVolver = new Button();
             SuspendLayout();
             // 
-            // button1
+            // btnVolver
             // 
-            button1.Location = new Point(180, 145);
-            button1.Name = "button1";
-            button1.Size = new Size(132, 55);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnVolver.BackColor = Color.FromArgb(192, 0, 0);
+            btnVolver.ForeColor = SystemColors.ButtonFace;
+            btnVolver.Location = new Point(150, 238);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(132, 55);
+            btnVolver.TabIndex = 0;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = false;
             // 
             // frmSocios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(btnVolver);
             Name = "frmSocios";
             Text = "Socios";
             ResumeLayout(false);
@@ -53,6 +55,6 @@
 
         #endregion
 
-        private Button button1;
+        private Button btnVolver;
     }
 }

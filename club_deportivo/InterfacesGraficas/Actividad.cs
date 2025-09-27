@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace club_deportivo.InterfacesGraficas
 {
-    public partial class Actividad : Form
+    public partial class frmActividad : Form
     {
-        public Actividad()
+        public frmActividad()
         {
             InitializeComponent();
         }
