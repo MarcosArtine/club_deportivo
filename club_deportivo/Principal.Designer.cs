@@ -125,6 +125,7 @@
             btnRegistro.TabIndex = 1;
             btnRegistro.Text = "REGISTRO";
             btnRegistro.UseVisualStyleBackColor = false;
+            btnRegistro.Click += btnRegistro_Click;
             // 
             // pictureBox1
             // 
@@ -136,7 +137,7 @@
             pictureBox.TabIndex = 2;
             pictureBox.TabStop = false;
             // 
-            // Form1
+            // frmClubDeportivo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -144,8 +145,8 @@
             Controls.Add(pictureBox);
             Controls.Add(btnRegistro);
             Controls.Add(pnlBarra);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "frmClubDeportivo";
+            Text = "Club Deportivo";
             pnlBarra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);
