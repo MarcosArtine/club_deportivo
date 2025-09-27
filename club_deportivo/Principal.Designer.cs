@@ -125,7 +125,7 @@
             btnRegistro.TabIndex = 1;
             btnRegistro.Text = "REGISTRO";
             btnRegistro.UseVisualStyleBackColor = false;
-            btnRegistro.Click += btnRegistro_Click;
+       
             // 
             // pictureBox1
             // 
@@ -137,7 +137,7 @@
             pictureBox.TabIndex = 2;
             pictureBox.TabStop = false;
             // 
-            // frmClubDeportivo
+
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
