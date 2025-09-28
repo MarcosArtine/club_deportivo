@@ -1,4 +1,5 @@
-﻿using System;
+﻿using club_deportivo.InterfacesGraficas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace club_deportivo.InterfacesGraficas
         public frmPagos()
         {
             InitializeComponent();
+        }
+
+        private void btnNuevoPago_Click(object sender, EventArgs e)
+        {
+            /* Abrimos el formulario Nuevo Pago*/
+            frmNuevoPago NuevoPago = new frmNuevoPago();
+            NuevoPago.Show();
         }
     }
 }

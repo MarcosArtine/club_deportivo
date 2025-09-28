@@ -7,11 +7,12 @@ namespace club_deportivo
         public Principal()
         {
             InitializeComponent();
+            btnSocios.BackColor = Color.FromArgb(164, 17, 0);
         }
 
         private void btnPagos_Click(object sender, EventArgs e)
         {
-            /* OCULTAMOS el formulario Home */
+            /* Ocultamos el formulario Home */
             this.Hide();
 
             /* Abrimos el formulario Pagos*/
@@ -45,9 +46,15 @@ namespace club_deportivo
             this.Close();
         }
 
-        private void btnInicio_Click(object sender, EventArgs e)
+
+        private void btnSocios_MouseMove(object sender, MouseEventArgs e)
         {
-            // No hacemos nada, ya estamos en el formulario de inicio.
+            btnSocios.BackColor = Color.FromArgb(200, 17, 0);
+        }
+
+        private void btnSocios_MouseLeave(object sender, EventArgs e)
+        {
+            btnSocios.BackColor = Color.FromArgb(164, 17, 0);
         }
     }
 }
