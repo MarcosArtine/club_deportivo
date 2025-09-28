@@ -36,6 +36,7 @@
             btnPagos = new Button();
             btnRegistro = new Button();
             pictureBox = new PictureBox();
+            btnLogin = new Button();
             pnlBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
@@ -43,6 +44,7 @@
             // pnlBarra
             // 
             pnlBarra.BackColor = Color.FromArgb(164, 17, 0);
+            pnlBarra.Controls.Add(btnLogin);
             pnlBarra.Controls.Add(btnSalir);
             pnlBarra.Controls.Add(btnActividad);
             pnlBarra.Controls.Add(btnSocios);
@@ -64,6 +66,8 @@
             btnSalir.Text = "SALIR";
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
+            btnSalir.MouseLeave += btnSalir_MouseLeave;
+            btnSalir.MouseMove += btnSalir_MouseMove;
             // 
             // btnActividad
             // 
@@ -78,6 +82,8 @@
             btnActividad.Text = "      ACTIVIDAD";
             btnActividad.UseVisualStyleBackColor = false;
             btnActividad.Click += btnActividad_Click;
+            btnActividad.MouseLeave += btnActividad_MouseLeave;
+            btnActividad.MouseMove += btnActividad_MouseMove;
             // 
             // btnSocios
             // 
@@ -108,6 +114,8 @@
             btnPagos.Text = "PAGOS";
             btnPagos.UseVisualStyleBackColor = false;
             btnPagos.Click += btnPagos_Click;
+            btnPagos.MouseLeave += btnPagos_MouseLeave;
+            btnPagos.MouseMove += btnPagos_MouseMove;
             // 
             // btnRegistro
             // 
@@ -119,16 +127,28 @@
             btnRegistro.TabIndex = 1;
             btnRegistro.Text = "REGISTRO";
             btnRegistro.UseVisualStyleBackColor = false;
+            btnRegistro.MouseLeave += btnRegistro_MouseLeave;
+            btnRegistro.MouseMove += btnRegistro_MouseMove;
             // 
             // pictureBox
             // 
             pictureBox.Image = (Image)resources.GetObject("pictureBox.Image");
-            pictureBox.Location = new Point(325, 108);
+            pictureBox.Location = new Point(311, 87);
             pictureBox.Name = "pictureBox";
-            pictureBox.Size = new Size(292, 233);
+            pictureBox.Size = new Size(346, 298);
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.TabIndex = 2;
             pictureBox.TabStop = false;
+            // 
+            // btnLogin
+            // 
+            btnLogin.Location = new Point(40, 12);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(75, 23);
+            btnLogin.TabIndex = 5;
+            btnLogin.Text = "LOGIN";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // Principal
             // 
@@ -152,8 +172,8 @@
         private Button btnActividad;
         private Button btnSocios;
         private Button btnPagos;
-        private Button btnInicio;
         private Button btnRegistro;
         private PictureBox pictureBox;
+        private Button btnLogin;
     }
 }

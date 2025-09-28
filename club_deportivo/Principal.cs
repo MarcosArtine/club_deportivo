@@ -7,7 +7,22 @@ namespace club_deportivo
         public Principal()
         {
             InitializeComponent();
+
             btnSocios.BackColor = Color.FromArgb(164, 17, 0);
+            btnPagos.BackColor = Color.FromArgb(164, 17, 0);
+            btnActividad.BackColor = Color.FromArgb(164, 17, 0);
+            btnSalir.BackColor = Color.FromArgb(164, 17, 0);
+            btnRegistro.BackColor = Color.FromArgb(164, 17, 0);
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            /* Ocultamos el formulario Home */
+            this.Hide();
+
+            /* Abrimos el formulario Registro*/
+            frmRegistro Registro = new frmRegistro();
+            Registro.Show();
         }
 
         private void btnPagos_Click(object sender, EventArgs e)
@@ -46,6 +61,15 @@ namespace club_deportivo
             this.Close();
         }
 
+        private void btnRegistro_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnRegistro.BackColor = Color.FromArgb(200, 17, 0);
+        }
+
+        private void btnRegistro_MouseLeave(object sender, EventArgs e)
+        {
+            btnRegistro.BackColor = Color.FromArgb(164, 17, 0);
+        }
 
         private void btnSocios_MouseMove(object sender, MouseEventArgs e)
         {
@@ -55,6 +79,45 @@ namespace club_deportivo
         private void btnSocios_MouseLeave(object sender, EventArgs e)
         {
             btnSocios.BackColor = Color.FromArgb(164, 17, 0);
+        }
+
+
+        private void btnPagos_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnPagos.BackColor = Color.FromArgb(200, 17, 0);
+        }
+
+        private void btnPagos_MouseLeave(object sender, EventArgs e)
+        {
+            btnPagos.BackColor = Color.FromArgb(164, 17, 0);
+        }
+
+        private void btnActividad_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnActividad.BackColor = Color.FromArgb(200, 17, 0);
+        }
+
+        private void btnActividad_MouseLeave(object sender, EventArgs e)
+        {
+            btnActividad.BackColor = Color.FromArgb(164, 17, 0);
+        }
+
+        private void btnSalir_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnSalir.BackColor = Color.FromArgb(200, 17, 0);
+        }
+
+        private void btnSalir_MouseLeave(object sender, EventArgs e)
+        {
+            btnSalir.BackColor = Color.FromArgb(164, 17, 0);
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+            /* Abrimos el formulario Actividad*/
+            frmLogin Login = new frmLogin();
+            Login.Show();
         }
     }
 }
