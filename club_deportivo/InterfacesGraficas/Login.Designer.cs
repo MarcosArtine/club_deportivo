@@ -36,8 +36,8 @@
             btnIngresar = new Button();
             lblUsuario = new Label();
             lblContraseña = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtUsuario = new TextBox();
+            txtPass = new TextBox();
             lblLogin = new Label();
             pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -94,6 +94,7 @@
             btnIngresar.TabIndex = 3;
             btnIngresar.Text = "INICIAR SECCIÓN";
             btnIngresar.UseVisualStyleBackColor = false;
+            btnIngresar.Click += btnIngresar_Click;
             btnIngresar.MouseLeave += btnIngresar_MouseLeave;
             btnIngresar.MouseMove += btnIngresar_MouseMove;
             // 
@@ -118,27 +119,29 @@
             lblContraseña.TabIndex = 5;
             lblContraseña.Text = "Contraseña:";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.Location = new Point(402, 163);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(198, 23);
-            textBox1.TabIndex = 6;
+            txtUsuario.Location = new Point(402, 163);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(198, 23);
+            txtUsuario.TabIndex = 6;
+            txtUsuario.Text = "Ingrese su usuario";
             // 
-            // textBox2
+            // txtPass
             // 
-            textBox2.Location = new Point(402, 243);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(198, 23);
-            textBox2.TabIndex = 7;
+            txtPass.Location = new Point(402, 243);
+            txtPass.Name = "txtPass";
+            txtPass.Size = new Size(198, 23);
+            txtPass.TabIndex = 7;
+            txtPass.Text = "Ingrese su contraseña";
             // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtPass);
+            Controls.Add(txtUsuario);
             Controls.Add(lblContraseña);
             Controls.Add(lblUsuario);
             Controls.Add(btnIngresar);
@@ -161,7 +164,7 @@
         private Button btnIngresar;
         private Label lblUsuario;
         private Label lblContraseña;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUsuario;
+        private TextBox txtPass;
     }
 }

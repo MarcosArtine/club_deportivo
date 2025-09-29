@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            LinkLabel llblVolver;
             btnNuevoPago = new Button();
-            lblVolver = new Label();
+            llblVolver = new LinkLabel();
             SuspendLayout();
             // 
             // btnNuevoPago
@@ -44,21 +45,27 @@
             btnNuevoPago.UseVisualStyleBackColor = false;
             btnNuevoPago.Click += btnNuevoPago_Click;
             // 
-            // lblVolver
+            // llblVolver
             // 
-            lblVolver.AutoSize = true;
-            lblVolver.Location = new Point(53, 27);
-            lblVolver.Name = "lblVolver";
-            lblVolver.Size = new Size(48, 15);
-            lblVolver.TabIndex = 3;
-            lblVolver.Text = "VOLVER";
+            llblVolver.ActiveLinkColor = Color.Black;
+            llblVolver.AutoSize = true;
+            llblVolver.BackColor = Color.FromArgb(164, 17, 0);
+            llblVolver.ForeColor = SystemColors.AppWorkspace;
+            llblVolver.LinkColor = Color.White;
+            llblVolver.Location = new Point(26, 45);
+            llblVolver.Name = "llblVolver";
+            llblVolver.Size = new Size(74, 15);
+            llblVolver.TabIndex = 4;
+            llblVolver.TabStop = true;
+            llblVolver.Text = "<--- VOLVER";
+            llblVolver.VisitedLinkColor = Color.FromArgb(164, 17, 0);
             // 
             // frmPagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(lblVolver);
+            Controls.Add(llblVolver);
             Controls.Add(btnNuevoPago);
             Name = "frmPagos";
             Text = "Pagos";
@@ -69,6 +76,5 @@
         #endregion
 
         private Button btnNuevoPago;
-        private Label lblVolver;
     }
 }

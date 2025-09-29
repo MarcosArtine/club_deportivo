@@ -29,32 +29,64 @@
         private void InitializeComponent()
         {
             btnVolver = new Button();
+            dataGridView1 = new DataGridView();
+            Nombre = new DataGridViewTextBoxColumn();
+            Apellido = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // btnVolver
             // 
             btnVolver.BackColor = Color.FromArgb(192, 0, 0);
             btnVolver.ForeColor = SystemColors.ButtonFace;
-            btnVolver.Location = new Point(150, 238);
+            btnVolver.Location = new Point(120, 383);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(132, 55);
+            btnVolver.Size = new Size(154, 41);
             btnVolver.TabIndex = 0;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
+            btnVolver.MouseLeave += btnVolver_MouseLeave;
+            btnVolver.MouseMove += btnVolver_MouseMove;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido });
+            dataGridView1.Location = new Point(64, 40);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(676, 301);
+            dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            Apellido.HeaderText = "Apellido";
+            Apellido.Name = "Apellido";
             // 
             // frmSocios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dataGridView1);
             Controls.Add(btnVolver);
             Name = "frmSocios";
             Text = "Socios";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button btnVolver;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Apellido;
     }
 }

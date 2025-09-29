@@ -2,9 +2,9 @@ using club_deportivo.InterfacesGraficas;
 
 namespace club_deportivo
 {
-    public partial class Principal : Form
+    public partial class frmPrincipal : Form
     {
-        public Principal()
+        public frmPrincipal()
         {
             InitializeComponent();
 

@@ -1,6 +1,6 @@
 ﻿namespace club_deportivo
 {
-    partial class Principal
+    partial class frmPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             pnlBarra = new Panel();
+            btnLogin = new Button();
             btnSalir = new Button();
             btnActividad = new Button();
             btnSocios = new Button();
             btnPagos = new Button();
             btnRegistro = new Button();
             pictureBox = new PictureBox();
-            btnLogin = new Button();
             pnlBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
@@ -54,6 +54,16 @@
             pnlBarra.Name = "pnlBarra";
             pnlBarra.Size = new Size(162, 450);
             pnlBarra.TabIndex = 0;
+            // 
+            // btnLogin
+            // 
+            btnLogin.Location = new Point(40, 12);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(75, 23);
+            btnLogin.TabIndex = 5;
+            btnLogin.Text = "LOGIN";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnSalir
             // 
@@ -121,9 +131,9 @@
             // 
             btnRegistro.BackColor = Color.FromArgb(164, 17, 0);
             btnRegistro.ForeColor = Color.White;
-            btnRegistro.Location = new Point(616, 31);
+            btnRegistro.Location = new Point(651, 22);
             btnRegistro.Name = "btnRegistro";
-            btnRegistro.Size = new Size(172, 50);
+            btnRegistro.Size = new Size(137, 36);
             btnRegistro.TabIndex = 1;
             btnRegistro.Text = "REGISTRO";
             btnRegistro.UseVisualStyleBackColor = false;
@@ -133,24 +143,14 @@
             // pictureBox
             // 
             pictureBox.Image = (Image)resources.GetObject("pictureBox.Image");
-            pictureBox.Location = new Point(311, 87);
+            pictureBox.Location = new Point(305, 94);
             pictureBox.Name = "pictureBox";
             pictureBox.Size = new Size(346, 298);
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.TabIndex = 2;
             pictureBox.TabStop = false;
             // 
-            // btnLogin
-            // 
-            btnLogin.Location = new Point(40, 12);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(75, 23);
-            btnLogin.TabIndex = 5;
-            btnLogin.Text = "LOGIN";
-            btnLogin.UseVisualStyleBackColor = true;
-            btnLogin.Click += btnLogin_Click;
-            // 
-            // Principal
+            // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -158,7 +158,7 @@
             Controls.Add(pictureBox);
             Controls.Add(btnRegistro);
             Controls.Add(pnlBarra);
-            Name = "Principal";
+            Name = "frmPrincipal";
             Text = "Club Deportivo";
             pnlBarra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
