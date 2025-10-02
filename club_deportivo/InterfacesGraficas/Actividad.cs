@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using club_deportivo.Datos; // Importamos el namespace para usar DActividad
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace club_deportivo.InterfacesGraficas
@@ -15,6 +10,49 @@ namespace club_deportivo.InterfacesGraficas
         public frmActividad()
         {
             InitializeComponent();
+        }
+
+        // 1. Método para cargar los datos en el DataGridView
+        private void ListarActividades()
+        {
+            try
+            {
+                // Instanciamos la clase de datos
+                EActividad Datos = new EActividad();
+
+                // Llamamos al método Listar y guardamos el resultado
+                DataTable dt = Datos.Listar();
+
+                if (dt != null)
+                {
+                    // Asignamos el DataTable como fuente de datos de la grilla
+                    dataGridView1.DataSource = dt;
+
+                    // Opcional: Renombrar las columnas para hacerlas más amigables
+                    dataGridView1.Columns["idActividad"].HeaderText = "ID";
+                    dataGridView1.Columns["nombreActividad"].HeaderText = "Nombre";
+                    dataGridView1.Columns["montoActividad"].HeaderText = "Monto ($)";
+
+                    // Opcional: Ajustar el ancho de las columnas
+                    dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        // 2. Evento Load del formulario para cargar los datos automáticamente
+        private void frmActividad_Load(object sender, EventArgs e)
+        {
+            ListarActividades();
+        }
+
+        // Evento que ya estaba en tu código
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Puedes dejarlo vacío o usarlo para manejar clics
         }
     }
 }

@@ -32,6 +32,8 @@
             dataGridView1 = new DataGridView();
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -39,7 +41,7 @@
             // 
             btnVolver.BackColor = Color.FromArgb(192, 0, 0);
             btnVolver.ForeColor = SystemColors.ButtonFace;
-            btnVolver.Location = new Point(120, 383);
+            btnVolver.Location = new Point(12, 397);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(154, 41);
             btnVolver.TabIndex = 0;
@@ -55,7 +57,7 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido });
             dataGridView1.Location = new Point(64, 40);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(676, 301);
+            dataGridView1.Size = new Size(680, 228);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -69,11 +71,31 @@
             Apellido.HeaderText = "Apellido";
             Apellido.Name = "Apellido";
             // 
+            // button1
+            // 
+            button1.Location = new Point(158, 311);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 2;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(549, 311);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 3;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // frmSocios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(btnVolver);
             Name = "frmSocios";
@@ -88,5 +110,7 @@
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Apellido;
+        private Button button1;
+        private Button button2;
     }
 }
