@@ -125,7 +125,9 @@
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(198, 23);
             txtUsuario.TabIndex = 6;
-            txtUsuario.Text = "Ingrese su usuario";
+            txtUsuario.Text = "Escribe tu nombre aquí...";
+            txtUsuario.Enter += txtUsuario_Enter;
+            txtUsuario.Leave += txtUsuario_Leave;
             // 
             // txtPass
             // 
@@ -133,7 +135,9 @@
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(198, 23);
             txtPass.TabIndex = 7;
-            txtPass.Text = "Ingrese su contraseña";
+            txtPass.Text = "Escribe tu contraseña aquí...";
+            txtPass.Enter += txtPass_Enter;
+            txtPass.Leave += txtPass_Leave;
             // 
             // frmLogin
             // 

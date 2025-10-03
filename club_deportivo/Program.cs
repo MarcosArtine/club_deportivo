@@ -1,3 +1,5 @@
+using club_deportivo.InterfacesGraficas;
+
 namespace club_deportivo
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace club_deportivo
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmPrincipal());
+            Application.Run(new frmLogin());
         }
     }
 }

@@ -1,6 +1,7 @@
 
 -- DROP DATABASE IF EXISTS Proyecto;
 -- CREATE DATABASE Proyecto;
+
 USE Proyecto;
 
 -- ==================================================
@@ -40,28 +41,6 @@ CREATE TABLE Profesor (
   FOREIGN KEY (ProfesorId) REFERENCES Persona(PersonaId) ON DELETE CASCADE
 );
 
--- ==================================================
---  Seguridad & Inicialización (Registro, Login)
--- ==================================================
-
--- Tabla Roles (Para permisos como Administrador y staff(profesores))
-CREATE TABLE Roles (
-  RolId INT PRIMARY KEY,
-  NombreRol VARCHAR(50) NOT NULL UNIQUE
-);
-
--- Tabla Usuario (login y registro)
-CREATE TABLE Usuario (
-  UsuarioId INT AUTO_INCREMENT PRIMARY KEY,
-  Username VARCHAR(50) NOT NULL UNIQUE,
-  PasswordHash VARBINARY(256) NOT NULL,
-  EmpleadoNombre VARCHAR(150) NULL,
-  RolId INT NOT NULL,
-  Activo BIT NOT NULL DEFAULT 1,
-  PersonaId INT NULL,
-  FOREIGN KEY (RolId) REFERENCES Roles(RolId),
-  FOREIGN KEY (PersonaId) REFERENCES Persona(PersonaId)
-);
 
 -- ==========================================================
 --  Clase Actividad (UML) 
@@ -133,6 +112,30 @@ CREATE TABLE PagoDiario (
   FOREIGN KEY (PagoRealizadoID) REFERENCES PagoRealizado(PagoRealizadoID) -- Apunta devuelta a registro de pago
 );
 
+
+-- ==================================================
+--  Seguridad & Inicialización (Registro, Login)
+-- ==================================================
+
+-- Tabla Roles (Para permisos como Administrador y staff(profesores))
+CREATE TABLE Roles (
+  RolId INT PRIMARY KEY,
+  NombreRol VARCHAR(50) NOT NULL UNIQUE
+);
+
+-- Tabla Usuario (login y registro)
+CREATE TABLE Usuario (
+  UsuarioId INT AUTO_INCREMENT PRIMARY KEY,
+  Username VARCHAR(50) NOT NULL UNIQUE,
+  PasswordHash VARBINARY(256) NOT NULL,
+  EmpleadoNombre VARCHAR(150) NULL,
+  RolId INT NOT NULL,
+  Activo BIT NOT NULL DEFAULT 1,
+  PersonaId INT NULL,
+  FOREIGN KEY (RolId) REFERENCES Roles(RolId),
+  FOREIGN KEY (PersonaId) REFERENCES Persona(PersonaId)
+);
+
 -- ==================================================
 --  Roles 
 -- ==================================================
@@ -141,7 +144,53 @@ CREATE TABLE PagoDiario (
 INSERT INTO Roles (RolId, NombreRol) 
 VALUES 
 (100, 'Administrador'),
-(200, 'Staff')
+(200, 'Staff');
 
--- =======================================================================
 
+-- ==================================================
+--  Creación del adminitrador por defecto
+-- ==================================================
+
+insert into usuario(UsuarioId,Username,PasswordHash,EmpleadoNombre) values
+(01,'marcos','123456',100);
+
+
+-- ==================================================
+--  PROCEDURE QUE UTILIZA EL PROYECTO
+-- ==================================================
+
+/* se cambia el delimitador de linea para poder almacenar en
+el sistema gestor el código del procedimiento
+Se puede utilizar cualquier caracater 
+*************************************************   */
+
+delimiter //  
+create procedure IngresoLogin(in Usu varchar(20),in Pass varchar(15))
+
+/* =============================================================================
+Se colocan dos parametros de entrada por eso son in
+uno para el nombre de usuario y el otro para la contraseña
+observar que la longitud debe ser igual que la longitud del atributo de la tabla
+===================================================================================  */
+begin
+  /* proyecto en la consulta el rol que tiene el usuario que ingresa */
+  
+  select NomRol
+	from usuario u inner join roles r on u.RolUsu = r.RolUsu
+		where NombreUsu = Usu and PassUsu = Pass /* se compara con los parametros */
+			and Activo = 1; /* el usuario debe estar activo */
+
+
+end 
+//
+
+/* ==========================
+si queremos probar el procedure se usa call
+====================================================== */
+
+call IngresoLogin('dato1', 'dato2')//
+
+/* ===============================
+si los datos de los parametros existen la consulta arroja 1 FILA
+si los datos de los parametros NO EXISTEN la consulta arroja 0 FILAS
+============================================================================= */

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using club_deportivo.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using club_deportivo.Entidades;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace club_deportivo.InterfacesGraficas
 {
@@ -18,6 +19,49 @@ namespace club_deportivo.InterfacesGraficas
             InitializeComponent();
             btnIngresar.BackColor = Color.FromArgb(164, 17, 0);
         }
+
+
+        private void txtUsuario_Enter(object sender, EventArgs e)
+        {
+            // Verifica si el texto es el placeholder
+            if (txtUsuario.Text == "Escribe tu nombre aquí...")
+            {
+                txtUsuario.Text = ""; // Borra el texto
+                txtUsuario.ForeColor = System.Drawing.Color.Black; // Restaura el color
+            }
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            // Si el usuario no escribió nada (el campo está vacío)
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+            {
+                txtUsuario.Text = "Escribe tu nombre aquí..."; // Restaura el placeholder
+                txtUsuario.ForeColor = System.Drawing.Color.Gray; // Restaura el color
+            }
+        }
+
+
+        private void txtPass_Enter(object sender, EventArgs e)
+        {
+            // Verifica si el texto es el placeholder
+            if (txtPass.Text == "Escribe tu contraseña aquí...")
+            {
+                txtPass.Text = ""; // Borra el texto
+                txtPass.ForeColor = System.Drawing.Color.Black; // Restaura el color
+            }
+        }
+
+        private void txtPass_Leave(object sender, EventArgs e)
+        {
+            // Si el usuario no escribió nada (el campo está vacío)
+            if (string.IsNullOrWhiteSpace(txtPass.Text))
+            {
+                txtPass.Text = "Escribe tu contraseña aquí..."; // Restaura el placeholder
+                txtPass.ForeColor = System.Drawing.Color.Gray; // Restaura el color
+            }
+        }
+
 
         private void btnIngresar_MouseMove(object sender, MouseEventArgs e)
         {
@@ -31,7 +75,6 @@ namespace club_deportivo.InterfacesGraficas
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            btnIngresar.BackColor = Color.FromArgb(164, 17, 0);
 
             DataTable tablaLogin = new DataTable(); // es la que recibe los datos desde el formulario
             Entidades.Usuarios dato = new Entidades.Usuarios(); // variable que contiene todas las caracteristicas de la clase
@@ -40,6 +83,17 @@ namespace club_deportivo.InterfacesGraficas
             {
                 // quiere decir que el resultado tiene 1 fila por lo que el usuario EXISTE
                 MessageBox.Show("Ingreso exitoso");
+
+
+
+                /* Ocultamos el formulario Login */
+                this.Hide();
+
+                /* Abrimos el formulario Pagos*/
+                frmPrincipal Principal = new frmPrincipal();
+                Principal.Show();
+
+
             }
             else
             {
