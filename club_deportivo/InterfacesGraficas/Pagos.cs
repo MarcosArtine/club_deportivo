@@ -24,5 +24,15 @@ namespace club_deportivo.InterfacesGraficas
             frmNuevoPago NuevoPago = new frmNuevoPago();
             NuevoPago.Show();
         }
+
+        private void llblVolver_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            /* Cerramos el formulario Pagos*/
+            this.Close();
+
+            /* Regresamos al formulario Home*/
+            frmPrincipal Home = new frmPrincipal();
+            Home.Show();
+        }
     }
 }

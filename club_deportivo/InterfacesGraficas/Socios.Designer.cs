@@ -28,13 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnVolver = new Button();
-            dataGridView1 = new DataGridView();
+            dtgvSocios = new DataGridView();
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
-            button1 = new Button();
-            button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            TipoDoc = new DataGridViewTextBoxColumn();
+            numDoc = new DataGridViewTextBoxColumn();
+            fecha = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
+            Email = new DataGridViewTextBoxColumn();
+            btnAgregar = new Button();
+            btnEliminar = new Button();
+            conexionBindingSource = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)dtgvSocios).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)conexionBindingSource).BeginInit();
             SuspendLayout();
             // 
             // btnVolver
@@ -51,15 +59,17 @@
             btnVolver.MouseLeave += btnVolver_MouseLeave;
             btnVolver.MouseMove += btnVolver_MouseMove;
             // 
-            // dataGridView1
+            // dtgvSocios
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido });
-            dataGridView1.Location = new Point(64, 40);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(680, 228);
-            dataGridView1.TabIndex = 1;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dtgvSocios.AutoGenerateColumns = false;
+            dtgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvSocios.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido, TipoDoc, numDoc, fecha, Telefono, Email });
+            dtgvSocios.DataSource = conexionBindingSource;
+            dtgvSocios.Location = new Point(12, 39);
+            dtgvSocios.Name = "dtgvSocios";
+            dtgvSocios.Size = new Size(776, 228);
+            dtgvSocios.TabIndex = 1;
+            dtgvSocios.CellContentClick += dgvSocios_CellContentClick;
             // 
             // Nombre
             // 
@@ -71,46 +81,84 @@
             Apellido.HeaderText = "Apellido";
             Apellido.Name = "Apellido";
             // 
-            // button1
+            // TipoDoc
             // 
-            button1.Location = new Point(158, 311);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            TipoDoc.HeaderText = "Tipo de documento";
+            TipoDoc.Name = "TipoDoc";
             // 
-            // button2
+            // numDoc
             // 
-            button2.Location = new Point(549, 311);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            numDoc.HeaderText = "Número de documento";
+            numDoc.Name = "numDoc";
+            // 
+            // fecha
+            // 
+            fecha.HeaderText = "Fecha de nacimiento";
+            fecha.Name = "fecha";
+            // 
+            // Telefono
+            // 
+            Telefono.HeaderText = "Número de telefono";
+            Telefono.Name = "Telefono";
+            // 
+            // Email
+            // 
+            Email.HeaderText = "Direccion de email";
+            Email.Name = "Email";
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(158, 311);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.TabIndex = 2;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(549, 311);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.TabIndex = 3;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // conexionBindingSource
+            // 
+            conexionBindingSource.DataSource = typeof(Datos.Conexion);
             // 
             // frmSocios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnAgregar);
+            Controls.Add(dtgvSocios);
             Controls.Add(btnVolver);
             Name = "frmSocios";
             Text = "Socios";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvSocios).EndInit();
+            ((System.ComponentModel.ISupportInitialize)conexionBindingSource).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button btnVolver;
-        private DataGridView dataGridView1;
+        private DataGridView dtgvSocios;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Apellido;
-        private Button button1;
-        private Button button2;
+        private Button btnAgregar;
+        private Button btnEliminar;
+        private DataGridViewTextBoxColumn TipoDoc;
+        private DataGridViewTextBoxColumn numDoc;
+        private DataGridViewTextBoxColumn fecha;
+        private DataGridViewTextBoxColumn Telefono;
+        private DataGridViewTextBoxColumn Email;
+        private BindingSource conexionBindingSource;
     }
 }

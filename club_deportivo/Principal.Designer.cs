@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             pnlBarra = new Panel();
-            btnLogin = new Button();
             btnSalir = new Button();
             btnActividad = new Button();
             btnSocios = new Button();
@@ -44,7 +43,6 @@
             // pnlBarra
             // 
             pnlBarra.BackColor = Color.FromArgb(164, 17, 0);
-            pnlBarra.Controls.Add(btnLogin);
             pnlBarra.Controls.Add(btnSalir);
             pnlBarra.Controls.Add(btnActividad);
             pnlBarra.Controls.Add(btnSocios);
@@ -54,16 +52,6 @@
             pnlBarra.Name = "pnlBarra";
             pnlBarra.Size = new Size(162, 450);
             pnlBarra.TabIndex = 0;
-            // 
-            // btnLogin
-            // 
-            btnLogin.Location = new Point(40, 12);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(75, 23);
-            btnLogin.TabIndex = 5;
-            btnLogin.Text = "LOGIN";
-            btnLogin.UseVisualStyleBackColor = true;
-            btnLogin.Click += btnLogin_Click;
             // 
             // btnSalir
             // 
@@ -137,6 +125,7 @@
             btnRegistro.TabIndex = 1;
             btnRegistro.Text = "REGISTRO";
             btnRegistro.UseVisualStyleBackColor = false;
+            btnRegistro.Click += btnRegistro_Click;
             btnRegistro.MouseLeave += btnRegistro_MouseLeave;
             btnRegistro.MouseMove += btnRegistro_MouseMove;
             // 

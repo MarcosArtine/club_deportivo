@@ -34,7 +34,7 @@ namespace club_deportivo.InterfacesGraficas
         private void txtUsuario_Leave(object sender, EventArgs e)
         {
             // Si el usuario no escribió nada (el campo está vacío)
-            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+            if (txtUsuario.Text == "")
             {
                 txtUsuario.Text = "Escribe tu nombre aquí..."; // Restaura el placeholder
                 txtUsuario.ForeColor = System.Drawing.Color.Gray; // Restaura el color
@@ -49,13 +49,15 @@ namespace club_deportivo.InterfacesGraficas
             {
                 txtPass.Text = ""; // Borra el texto
                 txtPass.ForeColor = System.Drawing.Color.Black; // Restaura el color
+
+                txtPass.UseSystemPasswordChar = true; // Activa el modo de contraseña camuflada
             }
         }
 
         private void txtPass_Leave(object sender, EventArgs e)
         {
             // Si el usuario no escribió nada (el campo está vacío)
-            if (string.IsNullOrWhiteSpace(txtPass.Text))
+            if (txtPass.Text == "")
             {
                 txtPass.Text = "Escribe tu contraseña aquí..."; // Restaura el placeholder
                 txtPass.ForeColor = System.Drawing.Color.Gray; // Restaura el color
@@ -81,10 +83,6 @@ namespace club_deportivo.InterfacesGraficas
             tablaLogin = dato.Log_Usu(txtUsuario.Text, txtPass.Text);
             if (tablaLogin.Rows.Count > 0)
             {
-                // quiere decir que el resultado tiene 1 fila por lo que el usuario EXISTE
-                MessageBox.Show("Ingreso exitoso");
-
-
 
                 /* Ocultamos el formulario Login */
                 this.Hide();

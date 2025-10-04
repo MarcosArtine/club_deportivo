@@ -28,18 +28,215 @@
         /// </summary>
         private void InitializeComponent()
         {
+            btnAgregar = new Button();
+            lblNombre = new Label();
+            lblApellido = new Label();
+            lblTipoDoc = new Label();
+            lblNumDoc = new Label();
+            lblFecha = new Label();
+            lblTelefono = new Label();
+            txtNombre = new TextBox();
+            txtApellido = new TextBox();
+            txtTipoDoc = new TextBox();
+            txtNumDoc = new TextBox();
+            txtFecha = new TextBox();
+            txtTel = new TextBox();
+            lblEmail = new Label();
+            txtEmail = new TextBox();
+            checkedListBox1 = new CheckedListBox();
+            btnVolver = new Button();
             SuspendLayout();
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(525, 384);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.TabIndex = 0;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // lblNombre
+            // 
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(20, 44);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(51, 15);
+            lblNombre.TabIndex = 1;
+            lblNombre.Text = "Nombre";
+            // 
+            // lblApellido
+            // 
+            lblApellido.AutoSize = true;
+            lblApellido.Location = new Point(20, 85);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(51, 15);
+            lblApellido.TabIndex = 2;
+            lblApellido.Text = "Apellido";
+            // 
+            // lblTipoDoc
+            // 
+            lblTipoDoc.AutoSize = true;
+            lblTipoDoc.Location = new Point(20, 121);
+            lblTipoDoc.Name = "lblTipoDoc";
+            lblTipoDoc.Size = new Size(111, 15);
+            lblTipoDoc.TabIndex = 3;
+            lblTipoDoc.Text = "Tipo de documento";
+            // 
+            // lblNumDoc
+            // 
+            lblNumDoc.AutoSize = true;
+            lblNumDoc.Location = new Point(20, 160);
+            lblNumDoc.Name = "lblNumDoc";
+            lblNumDoc.Size = new Size(132, 15);
+            lblNumDoc.TabIndex = 4;
+            lblNumDoc.Text = "Numero de documento";
+            // 
+            // lblFecha
+            // 
+            lblFecha.AutoSize = true;
+            lblFecha.Location = new Point(20, 199);
+            lblFecha.Name = "lblFecha";
+            lblFecha.Size = new Size(120, 15);
+            lblFecha.TabIndex = 5;
+            lblFecha.Text = "Fecha de  nacimiento";
+            // 
+            // lblTelefono
+            // 
+            lblTelefono.AutoSize = true;
+            lblTelefono.Location = new Point(20, 249);
+            lblTelefono.Name = "lblTelefono";
+            lblTelefono.Size = new Size(114, 15);
+            lblTelefono.TabIndex = 6;
+            lblTelefono.Text = "Número de telefono";
+            lblTelefono.TextAlign = ContentAlignment.BottomCenter;
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(254, 36);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(100, 23);
+            txtNombre.TabIndex = 7;
+            // 
+            // txtApellido
+            // 
+            txtApellido.Location = new Point(254, 77);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(100, 23);
+            txtApellido.TabIndex = 8;
+            // 
+            // txtTipoDoc
+            // 
+            txtTipoDoc.Location = new Point(254, 113);
+            txtTipoDoc.Name = "txtTipoDoc";
+            txtTipoDoc.Size = new Size(100, 23);
+            txtTipoDoc.TabIndex = 9;
+            // 
+            // txtNumDoc
+            // 
+            txtNumDoc.Location = new Point(254, 157);
+            txtNumDoc.Name = "txtNumDoc";
+            txtNumDoc.Size = new Size(100, 23);
+            txtNumDoc.TabIndex = 10;
+            // 
+            // txtFecha
+            // 
+            txtFecha.Location = new Point(254, 196);
+            txtFecha.Name = "txtFecha";
+            txtFecha.Size = new Size(100, 23);
+            txtFecha.TabIndex = 11;
+            // 
+            // txtTel
+            // 
+            txtTel.Location = new Point(254, 241);
+            txtTel.Name = "txtTel";
+            txtTel.Size = new Size(100, 23);
+            txtTel.TabIndex = 12;
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(20, 303);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(105, 15);
+            lblEmail.TabIndex = 13;
+            lblEmail.Text = "Dirección de email";
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(254, 295);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(100, 23);
+            txtEmail.TabIndex = 14;
+            // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Items.AddRange(new object[] { "Socio", "No Socio" });
+            checkedListBox1.Location = new Point(511, 42);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(120, 58);
+            checkedListBox1.TabIndex = 17;
+            // 
+            // btnVolver
+            // 
+            btnVolver.BackColor = Color.FromArgb(192, 0, 0);
+            btnVolver.ForeColor = SystemColors.ButtonFace;
+            btnVolver.Location = new Point(20, 384);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(154, 41);
+            btnVolver.TabIndex = 18;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
             // 
             // frmRegistro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnVolver);
+            Controls.Add(checkedListBox1);
+            Controls.Add(txtEmail);
+            Controls.Add(lblEmail);
+            Controls.Add(txtTel);
+            Controls.Add(txtFecha);
+            Controls.Add(txtNumDoc);
+            Controls.Add(txtTipoDoc);
+            Controls.Add(txtApellido);
+            Controls.Add(txtNombre);
+            Controls.Add(lblTelefono);
+            Controls.Add(lblFecha);
+            Controls.Add(lblNumDoc);
+            Controls.Add(lblTipoDoc);
+            Controls.Add(lblApellido);
+            Controls.Add(lblNombre);
+            Controls.Add(btnAgregar);
             Name = "frmRegistro";
             Text = "Registro";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button btnAgregar;
+        private Label lblNombre;
+        private Label lblApellido;
+        private Label lblTipoDoc;
+        private Label lblNumDoc;
+        private Label lblFecha;
+        private Label lblTelefono;
+        private TextBox txtNombre;
+        private TextBox txtApellido;
+        private TextBox txtTipoDoc;
+        private TextBox txtNumDoc;
+        private TextBox txtFecha;
+        private TextBox txtTel;
+        private Label lblEmail;
+        private TextBox txtEmail;
+        private CheckedListBox checkedListBox1;
+        private Button btnVolver;
     }
 }

@@ -112,12 +112,5 @@ namespace club_deportivo
             btnSalir.BackColor = Color.FromArgb(164, 17, 0);
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-
-            /* Abrimos el formulario Actividad*/
-            frmLogin Login = new frmLogin();
-            Login.Show();
-        }
     }
 }

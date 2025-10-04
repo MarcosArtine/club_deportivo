@@ -112,9 +112,8 @@ CREATE TABLE PagoDiario (
   FOREIGN KEY (PagoRealizadoID) REFERENCES PagoRealizado(PagoRealizadoID) -- Apunta devuelta a registro de pago
 );
 
-
 -- ==================================================
---  Seguridad & Inicialización (Registro, Login)
+-- Seguridad & Inicialización (Registro, Login)
 -- ==================================================
 
 -- Tabla Roles (Para permisos como Administrador y staff(profesores))
@@ -122,22 +121,29 @@ CREATE TABLE Roles (
   RolId INT PRIMARY KEY,
   NombreRol VARCHAR(50) NOT NULL UNIQUE
 );
-
+---
 -- Tabla Usuario (login y registro)
+-- IMPORTANTE: Se cambia PasswordHash de VARBINARY a VARCHAR(15)
+-- para que coincida con el tipo de dato que se inserta y se compara.
 CREATE TABLE Usuario (
   UsuarioId INT AUTO_INCREMENT PRIMARY KEY,
   Username VARCHAR(50) NOT NULL UNIQUE,
-  PasswordHash VARBINARY(256) NOT NULL,
+  -- Tipo de dato ajustado para la inserción simple '123456'
+  PasswordHash VARCHAR(15) NOT NULL,
   EmpleadoNombre VARCHAR(150) NULL,
   RolId INT NOT NULL,
   Activo BIT NOT NULL DEFAULT 1,
-  PersonaId INT NULL,
-  FOREIGN KEY (RolId) REFERENCES Roles(RolId),
-  FOREIGN KEY (PersonaId) REFERENCES Persona(PersonaId)
+  -- PersonaId no puede tener una FK si no se crea la tabla Persona
+  -- Por ahora la dejamos como NULL para que el código funcione
+  PersonaId INT NULL, 
+  FOREIGN KEY (RolId) REFERENCES Roles(RolId)
+  -- NOTA: Si descomentas la siguiente línea, debes crear la tabla 'Persona'
+  -- FOREIGN KEY (PersonaId) REFERENCES Persona(PersonaId)
 );
 
+---
 -- ==================================================
---  Roles 
+-- Roles 
 -- ==================================================
 
 -- Roles consolidados para el sistema
@@ -146,51 +152,32 @@ VALUES
 (100, 'Administrador'),
 (200, 'Staff');
 
-
+---
 -- ==================================================
---  Creación del adminitrador por defecto
--- ==================================================
-
-insert into usuario(UsuarioId,Username,PasswordHash,EmpleadoNombre) values
-(01,'marcos','123456',100);
-
-
--- ==================================================
---  PROCEDURE QUE UTILIZA EL PROYECTO
+-- Creación del adminitrador por defecto (SOLUCIÓN)
 -- ==================================================
 
-/* se cambia el delimitador de linea para poder almacenar en
-el sistema gestor el código del procedimiento
-Se puede utilizar cualquier caracater 
-*************************************************   */
+-- Se agrega la columna RolId (obligatoria) con el valor 100
+insert into Usuario(UsuarioId,Username,PasswordHash,EmpleadoNombre, RolId) values
+(01,'marcos','123456','Administrador', 100);
 
-delimiter //  
+---
+-- ==================================================
+-- PROCEDURE QUE UTILIZA EL PROYECTO
+-- ==================================================
+
+delimiter // 
 create procedure IngresoLogin(in Usu varchar(20),in Pass varchar(15))
-
-/* =============================================================================
-Se colocan dos parametros de entrada por eso son in
-uno para el nombre de usuario y el otro para la contraseña
-observar que la longitud debe ser igual que la longitud del atributo de la tabla
-===================================================================================  */
 begin
-  /* proyecto en la consulta el rol que tiene el usuario que ingresa */
-  
-  select NomRol
-	from usuario u inner join roles r on u.RolUsu = r.RolUsu
-		where NombreUsu = Usu and PassUsu = Pass /* se compara con los parametros */
-			and Activo = 1; /* el usuario debe estar activo */
-
-
+  -- La lógica de la consulta es correcta: se busca el NombreRol
+  select NombreRol
+    from Usuario u inner join Roles r on u.RolId = r.RolId
+        where Username = Usu and PasswordHash = Pass
+            and Activo = 1;
 end 
 //
 
-/* ==========================
-si queremos probar el procedure se usa call
-====================================================== */
+-- ==========================
 
-call IngresoLogin('dato1', 'dato2')//
-
-/* ===============================
-si los datos de los parametros existen la consulta arroja 1 FILA
-si los datos de los parametros NO EXISTEN la consulta arroja 0 FILAS
-============================================================================= */
+-- Restablecer el delimitador por defecto
+delimiter ;

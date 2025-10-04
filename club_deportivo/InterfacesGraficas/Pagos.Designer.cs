@@ -33,18 +33,6 @@
             llblVolver = new LinkLabel();
             SuspendLayout();
             // 
-            // btnNuevoPago
-            // 
-            btnNuevoPago.BackColor = Color.FromArgb(164, 17, 0);
-            btnNuevoPago.ForeColor = Color.White;
-            btnNuevoPago.Location = new Point(561, 27);
-            btnNuevoPago.Name = "btnNuevoPago";
-            btnNuevoPago.Size = new Size(172, 50);
-            btnNuevoPago.TabIndex = 2;
-            btnNuevoPago.Text = "Nuevo pago";
-            btnNuevoPago.UseVisualStyleBackColor = false;
-            btnNuevoPago.Click += btnNuevoPago_Click;
-            // 
             // llblVolver
             // 
             llblVolver.ActiveLinkColor = Color.Black;
@@ -59,6 +47,19 @@
             llblVolver.TabStop = true;
             llblVolver.Text = "<--- VOLVER";
             llblVolver.VisitedLinkColor = Color.FromArgb(164, 17, 0);
+            llblVolver.LinkClicked += llblVolver_LinkClicked;
+            // 
+            // btnNuevoPago
+            // 
+            btnNuevoPago.BackColor = Color.FromArgb(164, 17, 0);
+            btnNuevoPago.ForeColor = Color.White;
+            btnNuevoPago.Location = new Point(561, 27);
+            btnNuevoPago.Name = "btnNuevoPago";
+            btnNuevoPago.Size = new Size(172, 50);
+            btnNuevoPago.TabIndex = 2;
+            btnNuevoPago.Text = "Nuevo pago";
+            btnNuevoPago.UseVisualStyleBackColor = false;
+            btnNuevoPago.Click += btnNuevoPago_Click;
             // 
             // frmPagos
             // 
