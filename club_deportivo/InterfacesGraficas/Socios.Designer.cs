@@ -38,9 +38,10 @@
             fecha = new DataGridViewTextBoxColumn();
             Telefono = new DataGridViewTextBoxColumn();
             Email = new DataGridViewTextBoxColumn();
+            TipoCliente = new DataGridViewTextBoxColumn();
+            conexionBindingSource = new BindingSource(components);
             btnAgregar = new Button();
             btnEliminar = new Button();
-            conexionBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dtgvSocios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionBindingSource).BeginInit();
             SuspendLayout();
@@ -63,52 +64,68 @@
             // 
             dtgvSocios.AutoGenerateColumns = false;
             dtgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvSocios.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido, TipoDoc, numDoc, fecha, Telefono, Email });
+            dtgvSocios.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido, TipoDoc, numDoc, fecha, Telefono, Email, TipoCliente });
             dtgvSocios.DataSource = conexionBindingSource;
             dtgvSocios.Location = new Point(12, 39);
             dtgvSocios.Name = "dtgvSocios";
-            dtgvSocios.Size = new Size(776, 228);
+            dtgvSocios.Size = new Size(1054, 228);
             dtgvSocios.TabIndex = 1;
-            dtgvSocios.CellContentClick += dgvSocios_CellContentClick;
             // 
             // Nombre
             // 
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
+            Nombre.Width = 150;
             // 
             // Apellido
             // 
             Apellido.HeaderText = "Apellido";
             Apellido.Name = "Apellido";
+            Apellido.Width = 150;
             // 
             // TipoDoc
             // 
             TipoDoc.HeaderText = "Tipo de documento";
             TipoDoc.Name = "TipoDoc";
+            TipoDoc.Width = 150;
             // 
             // numDoc
             // 
             numDoc.HeaderText = "Número de documento";
             numDoc.Name = "numDoc";
+            numDoc.Width = 150;
             // 
             // fecha
             // 
             fecha.HeaderText = "Fecha de nacimiento";
             fecha.Name = "fecha";
+            fecha.Width = 150;
             // 
             // Telefono
             // 
             Telefono.HeaderText = "Número de telefono";
             Telefono.Name = "Telefono";
+            Telefono.Width = 150;
             // 
             // Email
             // 
             Email.HeaderText = "Direccion de email";
             Email.Name = "Email";
+            Email.Width = 150;
+            // 
+            // TipoCliente
+            // 
+            TipoCliente.HeaderText = "Tipo de cliente";
+            TipoCliente.Name = "TipoCliente";
+            TipoCliente.Width = 150;
+            // 
+            // conexionBindingSource
+            // 
+            conexionBindingSource.DataSource = typeof(Datos.Conexion);
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(158, 311);
+            btnAgregar.Location = new Point(357, 311);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 2;
@@ -118,7 +135,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(549, 311);
+            btnEliminar.Location = new Point(565, 311);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 3;
@@ -126,21 +143,18 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // conexionBindingSource
-            // 
-            conexionBindingSource.DataSource = typeof(Datos.Conexion);
-            // 
             // frmSocios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1078, 450);
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
             Controls.Add(dtgvSocios);
             Controls.Add(btnVolver);
             Name = "frmSocios";
             Text = "Socios";
+            Load += Socios_Load;
             ((System.ComponentModel.ISupportInitialize)dtgvSocios).EndInit();
             ((System.ComponentModel.ISupportInitialize)conexionBindingSource).EndInit();
             ResumeLayout(false);
@@ -150,15 +164,16 @@
 
         private Button btnVolver;
         private DataGridView dtgvSocios;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Apellido;
         private Button btnAgregar;
         private Button btnEliminar;
+        private BindingSource conexionBindingSource;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Apellido;
         private DataGridViewTextBoxColumn TipoDoc;
         private DataGridViewTextBoxColumn numDoc;
         private DataGridViewTextBoxColumn fecha;
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn Email;
-        private BindingSource conexionBindingSource;
+        private DataGridViewTextBoxColumn TipoCliente;
     }
 }

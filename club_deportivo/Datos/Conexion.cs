@@ -30,7 +30,7 @@ namespace club_deportivo.Datos
         this.clave = "05abril1992";
         }
         // proceso de interacción
-        public MySqlConnection CrearConcexion()
+        public MySqlConnection CrearConexion()
         {
             // instanciamos una conexion
             MySqlConnection? cadena = new MySqlConnection();
@@ -46,6 +46,10 @@ namespace club_deportivo.Datos
             catch (Exception ex)
             {
                 cadena = null;
+
+
+                System.Windows.Forms.MessageBox.Show("Error al cargar la lista de clientes: " + ex.Message);
+
                 throw;
             }
             return cadena;

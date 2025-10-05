@@ -58,7 +58,9 @@ namespace club_deportivo
         private void btnSalir_Click(object sender, EventArgs e)
         {
             // Aquí sí usamos Close(), ya que queremos terminar la aplicación.
-            this.Close();
+            //this.Close();
+
+            Application.Exit();
         }
 
         private void btnRegistro_MouseMove(object sender, MouseEventArgs e)

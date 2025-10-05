@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace club_deportivo.Datos
 {
-    public class EActividad
+    public class E_Actividad
     {
         public DataTable Listar()
         {
@@ -21,7 +21,7 @@ namespace club_deportivo.Datos
             try
             {
                 // Obtenemos la instancia de la conexión
-                Conex = Conexion.getInstancia().CrearConcexion();
+                Conex = Conexion.getInstancia().CrearConexion();
 
                 // 🔑 ¡Importante! Abrir la conexión antes de usar el comando/adaptador
                 Conex.Open(); // <-- (Recomendado de la respuesta anterior)

@@ -1,4 +1,4 @@
-﻿using club_deportivo.Datos; // Importamos el namespace para usar DActividad
+﻿using club_deportivo.Datos; // Importamos el namespace para usar E_Actividad
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -18,7 +18,7 @@ namespace club_deportivo.InterfacesGraficas
             try
             {
                 // Instanciamos la clase de datos
-                EActividad Datos = new EActividad();
+                E_Actividad Datos = new E_Actividad();
 
                 // Llamamos al método Listar y guardamos el resultado
                 DataTable dt = Datos.Listar();

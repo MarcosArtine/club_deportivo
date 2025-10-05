@@ -37,19 +37,21 @@
             lblTelefono = new Label();
             txtNombre = new TextBox();
             txtApellido = new TextBox();
-            txtTipoDoc = new TextBox();
             txtNumDoc = new TextBox();
             txtFecha = new TextBox();
             txtTel = new TextBox();
             lblEmail = new Label();
             txtEmail = new TextBox();
-            checkedListBox1 = new CheckedListBox();
             btnVolver = new Button();
+            btnLimpiar = new Button();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(525, 384);
+            btnAgregar.Location = new Point(546, 286);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 0;
@@ -60,7 +62,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(20, 44);
+            lblNombre.Location = new Point(20, 49);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(51, 15);
             lblNombre.TabIndex = 1;
@@ -69,7 +71,7 @@
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(20, 85);
+            lblApellido.Location = new Point(403, 49);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(51, 15);
             lblApellido.TabIndex = 2;
@@ -78,7 +80,7 @@
             // lblTipoDoc
             // 
             lblTipoDoc.AutoSize = true;
-            lblTipoDoc.Location = new Point(20, 121);
+            lblTipoDoc.Location = new Point(20, 101);
             lblTipoDoc.Name = "lblTipoDoc";
             lblTipoDoc.Size = new Size(111, 15);
             lblTipoDoc.TabIndex = 3;
@@ -87,7 +89,7 @@
             // lblNumDoc
             // 
             lblNumDoc.AutoSize = true;
-            lblNumDoc.Location = new Point(20, 160);
+            lblNumDoc.Location = new Point(20, 157);
             lblNumDoc.Name = "lblNumDoc";
             lblNumDoc.Size = new Size(132, 15);
             lblNumDoc.TabIndex = 4;
@@ -96,7 +98,7 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(20, 199);
+            lblFecha.Location = new Point(403, 101);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(120, 15);
             lblFecha.TabIndex = 5;
@@ -105,7 +107,7 @@
             // lblTelefono
             // 
             lblTelefono.AutoSize = true;
-            lblTelefono.Location = new Point(20, 249);
+            lblTelefono.Location = new Point(403, 157);
             lblTelefono.Name = "lblTelefono";
             lblTelefono.Size = new Size(114, 15);
             lblTelefono.TabIndex = 6;
@@ -114,50 +116,43 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(254, 36);
+            txtNombre.Location = new Point(179, 41);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(100, 23);
+            txtNombre.Size = new Size(186, 23);
             txtNombre.TabIndex = 7;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(254, 77);
+            txtApellido.Location = new Point(546, 49);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(100, 23);
+            txtApellido.Size = new Size(204, 23);
             txtApellido.TabIndex = 8;
-            // 
-            // txtTipoDoc
-            // 
-            txtTipoDoc.Location = new Point(254, 113);
-            txtTipoDoc.Name = "txtTipoDoc";
-            txtTipoDoc.Size = new Size(100, 23);
-            txtTipoDoc.TabIndex = 9;
             // 
             // txtNumDoc
             // 
-            txtNumDoc.Location = new Point(254, 157);
+            txtNumDoc.Location = new Point(546, 96);
             txtNumDoc.Name = "txtNumDoc";
-            txtNumDoc.Size = new Size(100, 23);
+            txtNumDoc.Size = new Size(204, 23);
             txtNumDoc.TabIndex = 10;
             // 
             // txtFecha
             // 
-            txtFecha.Location = new Point(254, 196);
+            txtFecha.Location = new Point(179, 149);
             txtFecha.Name = "txtFecha";
-            txtFecha.Size = new Size(100, 23);
+            txtFecha.Size = new Size(186, 23);
             txtFecha.TabIndex = 11;
             // 
             // txtTel
             // 
-            txtTel.Location = new Point(254, 241);
+            txtTel.Location = new Point(546, 149);
             txtTel.Name = "txtTel";
-            txtTel.Size = new Size(100, 23);
+            txtTel.Size = new Size(204, 23);
             txtTel.TabIndex = 12;
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(20, 303);
+            lblEmail.Location = new Point(20, 216);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(105, 15);
             lblEmail.TabIndex = 13;
@@ -165,19 +160,10 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(254, 295);
+            txtEmail.Location = new Point(179, 208);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(100, 23);
+            txtEmail.Size = new Size(186, 23);
             txtEmail.TabIndex = 14;
-            // 
-            // checkedListBox1
-            // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { "Socio", "No Socio" });
-            checkedListBox1.Location = new Point(511, 42);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(120, 58);
-            checkedListBox1.TabIndex = 17;
             // 
             // btnVolver
             // 
@@ -191,19 +177,57 @@
             btnVolver.UseVisualStyleBackColor = false;
             btnVolver.Click += btnVolver_Click;
             // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(675, 286);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(75, 23);
+            btnLimpiar.TabIndex = 19;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Dni", "Pasaporte", "Libreta civica" });
+            comboBox1.Location = new Point(179, 91);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(186, 23);
+            comboBox1.TabIndex = 20;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Socio", "No socio" });
+            comboBox2.Location = new Point(552, 206);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 21;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(403, 214);
+            label1.Name = "label1";
+            label1.Size = new Size(84, 15);
+            label1.TabIndex = 22;
+            label1.Text = "Tipo de cliente";
+            // 
             // frmRegistro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
+            Controls.Add(btnLimpiar);
             Controls.Add(btnVolver);
-            Controls.Add(checkedListBox1);
             Controls.Add(txtEmail);
             Controls.Add(lblEmail);
             Controls.Add(txtTel);
             Controls.Add(txtFecha);
             Controls.Add(txtNumDoc);
-            Controls.Add(txtTipoDoc);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
             Controls.Add(lblTelefono);
@@ -230,13 +254,15 @@
         private Label lblTelefono;
         private TextBox txtNombre;
         private TextBox txtApellido;
-        private TextBox txtTipoDoc;
         private TextBox txtNumDoc;
         private TextBox txtFecha;
         private TextBox txtTel;
         private Label lblEmail;
         private TextBox txtEmail;
-        private CheckedListBox checkedListBox1;
         private Button btnVolver;
+        private Button btnLimpiar;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private Label label1;
     }
 }

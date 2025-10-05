@@ -38,6 +38,7 @@
             lblContraseña = new Label();
             txtUsuario = new TextBox();
             txtPass = new TextBox();
+            llblRecordar = new LinkLabel();
             lblLogin = new Label();
             pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -113,7 +114,7 @@
             // 
             lblContraseña.AutoSize = true;
             lblContraseña.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblContraseña.Location = new Point(402, 219);
+            lblContraseña.Location = new Point(402, 208);
             lblContraseña.Name = "lblContraseña";
             lblContraseña.Size = new Size(100, 21);
             lblContraseña.TabIndex = 5;
@@ -131,7 +132,7 @@
             // 
             // txtPass
             // 
-            txtPass.Location = new Point(402, 243);
+            txtPass.Location = new Point(402, 232);
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(198, 23);
             txtPass.TabIndex = 7;
@@ -139,11 +140,22 @@
             txtPass.Enter += txtPass_Enter;
             txtPass.Leave += txtPass_Leave;
             // 
+            // llblRecordar
+            // 
+            llblRecordar.AutoSize = true;
+            llblRecordar.Location = new Point(481, 272);
+            llblRecordar.Name = "llblRecordar";
+            llblRecordar.Size = new Size(119, 15);
+            llblRecordar.TabIndex = 8;
+            llblRecordar.TabStop = true;
+            llblRecordar.Text = "Olvide mi contraseña";
+            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(llblRecordar);
             Controls.Add(txtPass);
             Controls.Add(txtUsuario);
             Controls.Add(lblContraseña);
@@ -170,5 +182,6 @@
         private Label lblContraseña;
         private TextBox txtUsuario;
         private TextBox txtPass;
+        private LinkLabel llblRecordar;
     }
 }
