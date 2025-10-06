@@ -14,11 +14,11 @@ namespace club_deportivo.Entidades
 
             try
             {
-                sqlCon = Conexion.getInstancia().CrearConexion();
+                sqlCon = Conexion.CrearConexion();
 
                 // --- Consulta SQL para obtener TODOS los registros y clasificarlos ---
                 string sqlQuery = @"
-                    SELECT 
+                   SELECT 
                         p.Nombre, 
                         p.Apellido, 
                         p.TipoDni, 
@@ -26,19 +26,14 @@ namespace club_deportivo.Entidades
                         p.FechaNacimiento, 
                         p.Telefono, 
                         p.Email,
-                        -- Usamos CASE para determinar si es Socio, No Socio, o ninguno (Aunque en tu DB debe ser uno de los dos)
-                        CASE 
-                            WHEN s.SocioID IS NOT NULL THEN 'Socio'
-                            WHEN ns.NoSocioID IS NOT NULL THEN 'No Socio'
-                            ELSE 'Indefinido' -- Caso de seguridad por si hay una Persona sin registro en Socio/NoSocio
-                        END AS TipoCliente,
+
                         s.NroCarnet  -- El NroCarnet solo existirá para los Socios
                     FROM 
                         Persona p 
                     LEFT JOIN 
-                        Socio s ON p.PersonaID = s.SocioID -- Intenta unir con Socio
+                        Socio s ON p.PersonaID = s.SocioID
                     LEFT JOIN 
-                        NoSocio ns ON p.PersonaID = ns.NoSocioID; -- Intenta unir con NoSocio
+                        NoSocio ns ON p.PersonaID = ns.NoSocioID;
                     ";
 
                 MySqlCommand comando = new MySqlCommand(sqlQuery, sqlCon);

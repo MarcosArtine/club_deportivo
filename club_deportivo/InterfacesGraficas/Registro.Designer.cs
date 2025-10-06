@@ -38,15 +38,13 @@
             txtNombre = new TextBox();
             txtApellido = new TextBox();
             txtNumDoc = new TextBox();
-            txtFecha = new TextBox();
             txtTel = new TextBox();
             lblEmail = new Label();
             txtEmail = new TextBox();
             btnVolver = new Button();
             btnLimpiar = new Button();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            label1 = new Label();
+            cmbTipoDoc = new ComboBox();
+            dtpFechaNac = new DateTimePicker();
             SuspendLayout();
             // 
             // btnAgregar
@@ -98,7 +96,7 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(403, 101);
+            lblFecha.Location = new Point(403, 107);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(120, 15);
             lblFecha.TabIndex = 5;
@@ -130,17 +128,10 @@
             // 
             // txtNumDoc
             // 
-            txtNumDoc.Location = new Point(546, 96);
+            txtNumDoc.Location = new Point(179, 149);
             txtNumDoc.Name = "txtNumDoc";
-            txtNumDoc.Size = new Size(204, 23);
-            txtNumDoc.TabIndex = 10;
-            // 
-            // txtFecha
-            // 
-            txtFecha.Location = new Point(179, 149);
-            txtFecha.Name = "txtFecha";
-            txtFecha.Size = new Size(186, 23);
-            txtFecha.TabIndex = 11;
+            txtNumDoc.Size = new Size(186, 23);
+            txtNumDoc.TabIndex = 11;
             // 
             // txtTel
             // 
@@ -186,47 +177,34 @@
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cmbTipoDoc
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Dni", "Pasaporte", "Libreta civica" });
-            comboBox1.Location = new Point(179, 91);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(186, 23);
-            comboBox1.TabIndex = 20;
+            cmbTipoDoc.FormattingEnabled = true;
+            cmbTipoDoc.Items.AddRange(new object[] { "Dni", "Pasaporte", "Libreta civica" });
+            cmbTipoDoc.Location = new Point(179, 91);
+            cmbTipoDoc.Name = "cmbTipoDoc";
+            cmbTipoDoc.Size = new Size(186, 23);
+            cmbTipoDoc.TabIndex = 20;
             // 
-            // comboBox2
+            // dtpFechaNac
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Socio", "No socio" });
-            comboBox2.Location = new Point(552, 206);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 21;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(403, 214);
-            label1.Name = "label1";
-            label1.Size = new Size(84, 15);
-            label1.TabIndex = 22;
-            label1.Text = "Tipo de cliente";
+            dtpFechaNac.Location = new Point(546, 101);
+            dtpFechaNac.Name = "dtpFechaNac";
+            dtpFechaNac.Size = new Size(200, 23);
+            dtpFechaNac.TabIndex = 23;
             // 
             // frmRegistro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(dtpFechaNac);
+            Controls.Add(cmbTipoDoc);
             Controls.Add(btnLimpiar);
             Controls.Add(btnVolver);
             Controls.Add(txtEmail);
             Controls.Add(lblEmail);
             Controls.Add(txtTel);
-            Controls.Add(txtFecha);
             Controls.Add(txtNumDoc);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
@@ -255,14 +233,12 @@
         private TextBox txtNombre;
         private TextBox txtApellido;
         private TextBox txtNumDoc;
-        private TextBox txtFecha;
         private TextBox txtTel;
         private Label lblEmail;
         private TextBox txtEmail;
         private Button btnVolver;
         private Button btnLimpiar;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private Label label1;
+        private ComboBox cmbTipoDoc;
+        private DateTimePicker dtpFechaNac;
     }
 }

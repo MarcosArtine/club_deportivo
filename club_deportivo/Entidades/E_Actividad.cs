@@ -21,7 +21,7 @@ namespace club_deportivo.Datos
             try
             {
                 // Obtenemos la instancia de la conexión
-                Conex = Conexion.getInstancia().CrearConexion();
+                Conex = Conexion.CrearConexion();
 
                 // 🔑 ¡Importante! Abrir la conexión antes de usar el comando/adaptador
                 Conex.Open(); // <-- (Recomendado de la respuesta anterior)

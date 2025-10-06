@@ -38,7 +38,6 @@
             fecha = new DataGridViewTextBoxColumn();
             Telefono = new DataGridViewTextBoxColumn();
             Email = new DataGridViewTextBoxColumn();
-            TipoCliente = new DataGridViewTextBoxColumn();
             conexionBindingSource = new BindingSource(components);
             btnAgregar = new Button();
             btnEliminar = new Button();
@@ -62,66 +61,61 @@
             // 
             // dtgvSocios
             // 
-            dtgvSocios.AutoGenerateColumns = false;
             dtgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvSocios.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido, TipoDoc, numDoc, fecha, Telefono, Email, TipoCliente });
-            dtgvSocios.DataSource = conexionBindingSource;
+            dtgvSocios.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido, TipoDoc, numDoc, fecha, Telefono, Email });
             dtgvSocios.Location = new Point(12, 39);
             dtgvSocios.Name = "dtgvSocios";
-            dtgvSocios.Size = new Size(1054, 228);
+            dtgvSocios.Size = new Size(1000, 228);
             dtgvSocios.TabIndex = 1;
             // 
             // Nombre
             // 
+            Nombre.DataPropertyName = "Nombre";
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
             Nombre.Width = 150;
             // 
             // Apellido
             // 
+            Apellido.DataPropertyName = "Apellido";
             Apellido.HeaderText = "Apellido";
             Apellido.Name = "Apellido";
             Apellido.Width = 150;
             // 
             // TipoDoc
             // 
+            TipoDoc.DataPropertyName = "TipoDni";
             TipoDoc.HeaderText = "Tipo de documento";
             TipoDoc.Name = "TipoDoc";
             TipoDoc.Width = 150;
             // 
             // numDoc
             // 
+            numDoc.DataPropertyName = "NroDni";
             numDoc.HeaderText = "Número de documento";
             numDoc.Name = "numDoc";
             numDoc.Width = 150;
             // 
             // fecha
             // 
+            fecha.DataPropertyName = "FechaNacimiento";
             fecha.HeaderText = "Fecha de nacimiento";
             fecha.Name = "fecha";
             fecha.Width = 150;
             // 
             // Telefono
             // 
+            Telefono.DataPropertyName = "Telefono";
             Telefono.HeaderText = "Número de telefono";
             Telefono.Name = "Telefono";
             Telefono.Width = 150;
             // 
             // Email
             // 
+            Email.DataPropertyName = "Email";
             Email.HeaderText = "Direccion de email";
             Email.Name = "Email";
             Email.Width = 150;
-            // 
-            // TipoCliente
-            // 
-            TipoCliente.HeaderText = "Tipo de cliente";
-            TipoCliente.Name = "TipoCliente";
-            TipoCliente.Width = 150;
-            // 
-            // conexionBindingSource
-            // 
-            conexionBindingSource.DataSource = typeof(Datos.Conexion);
             // 
             // btnAgregar
             // 
@@ -147,7 +141,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1078, 450);
+            ClientSize = new Size(1022, 450);
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
             Controls.Add(dtgvSocios);
@@ -174,6 +168,5 @@
         private DataGridViewTextBoxColumn fecha;
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn Email;
-        private DataGridViewTextBoxColumn TipoCliente;
     }
 }

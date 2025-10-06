@@ -30,30 +30,31 @@ namespace club_deportivo.Datos
         this.clave = "05abril1992";
         }
         // proceso de interacción
-        public MySqlConnection CrearConexion()
+        public static MySqlConnection CrearConexion() // AÑADIR 'static'
         {
-            // instanciamos una conexion
+            // Obtener la única instancia de la conexión Singleton
+            Conexion instancia = getInstancia();
+
             MySqlConnection? cadena = new MySqlConnection();
-            // el bloque try permite controlar errores
+
             try
             {
-                cadena.ConnectionString = "datasource=" + this.servidor +
-                ";port=" + this.puerto +
-                ";username=" + this.usuario +
-                ";password=" + this.clave +
-                ";Database=" + this.baseDatos;
+                cadena.ConnectionString = "datasource=" + instancia.servidor + // Usar la instancia
+                ";port=" + instancia.puerto +
+                ";username=" + instancia.usuario +
+                ";password=" + instancia.clave +
+                ";Database=" + instancia.baseDatos;
             }
             catch (Exception ex)
             {
                 cadena = null;
-
-
                 System.Windows.Forms.MessageBox.Show("Error al cargar la lista de clientes: " + ex.Message);
-
                 throw;
             }
             return cadena;
         }
+
+
         // para evaluar la instancia de la conectividad
         public static Conexion getInstancia()
         {
