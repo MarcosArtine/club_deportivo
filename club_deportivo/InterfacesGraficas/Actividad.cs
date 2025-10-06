@@ -54,5 +54,14 @@ namespace club_deportivo.InterfacesGraficas
         {
             // Puedes dejarlo vacío o usarlo para manejar clics
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            /* Regresamos al formulario Home*/
+            frmPrincipal Home = new frmPrincipal();
+            Home.Show();
+        }
     }
 }

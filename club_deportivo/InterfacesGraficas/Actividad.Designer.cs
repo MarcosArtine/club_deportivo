@@ -34,8 +34,7 @@
             nombreActividad = new DataGridViewTextBoxColumn();
             montoActividad = new DataGridViewTextBoxColumn();
             conexionBindingSource = new BindingSource(components);
-            button1 = new Button();
-            button2 = new Button();
+            btnVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionBindingSource).BeginInit();
             SuspendLayout();
@@ -46,9 +45,9 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idActividad, nombreActividad, montoActividad });
             dataGridView1.DataSource = conexionBindingSource;
-            dataGridView1.Location = new Point(61, 45);
+            dataGridView1.Location = new Point(12, 88);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(641, 239);
+            dataGridView1.Size = new Size(776, 271);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -74,31 +73,24 @@
             // 
             conexionBindingSource.DataSource = typeof(Datos.Conexion);
             // 
-            // button1
+            // btnVolver
             // 
-            button1.Location = new Point(207, 320);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(498, 320);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnVolver.BackColor = Color.FromArgb(192, 0, 0);
+            btnVolver.ForeColor = SystemColors.ButtonFace;
+            btnVolver.Location = new Point(12, 12);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(154, 41);
+            btnVolver.TabIndex = 1;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
             // 
             // frmActividad
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnVolver);
             Controls.Add(dataGridView1);
             Name = "frmActividad";
             Text = "Actividad";
@@ -115,7 +107,6 @@
         private DataGridViewTextBoxColumn idActividad;
         private DataGridViewTextBoxColumn nombreActividad;
         private DataGridViewTextBoxColumn montoActividad;
-        private Button button1;
-        private Button button2;
+        private Button btnVolver;
     }
 }

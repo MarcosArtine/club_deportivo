@@ -41,7 +41,8 @@
             conexionBindingSource = new BindingSource(components);
             btnAgregar = new Button();
             btnEliminar = new Button();
-     
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgvSocios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionBindingSource).BeginInit();
             SuspendLayout();
@@ -50,7 +51,7 @@
             // 
             btnVolver.BackColor = Color.FromArgb(192, 0, 0);
             btnVolver.ForeColor = SystemColors.ButtonFace;
-            btnVolver.Location = new Point(12, 397);
+            btnVolver.Location = new Point(12, 12);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(154, 41);
             btnVolver.TabIndex = 0;
@@ -64,9 +65,9 @@
             // 
             dtgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvSocios.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido, TipoDoc, numDoc, fecha, Telefono, Email });
-            dtgvSocios.Location = new Point(10, 34);
+            dtgvSocios.Location = new Point(12, 138);
             dtgvSocios.Name = "dtgvSocios";
-            dtgvSocios.Size = new Size(1000, 228);
+            dtgvSocios.Size = new Size(884, 240);
             dtgvSocios.TabIndex = 1;
             // 
             // Nombre
@@ -120,30 +121,57 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(357, 311);
+            btnAgregar.BackColor = Color.FromArgb(192, 0, 0);
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Location = new Point(629, 392);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.Size = new Size(133, 40);
             btnAgregar.TabIndex = 2;
             btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(565, 311);
+            btnEliminar.BackColor = Color.FromArgb(192, 0, 0);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(768, 392);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.Size = new Size(128, 40);
             btnEliminar.TabIndex = 3;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
-
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(192, 0, 0);
+            button1.ForeColor = SystemColors.ButtonFace;
+            button1.Location = new Point(690, 24);
+            button1.Name = "button1";
+            button1.Size = new Size(206, 41);
+            button1.TabIndex = 4;
+            button1.Text = "EMITIR LISTADO DE MOROSOS";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(192, 0, 0);
+            button2.ForeColor = SystemColors.ButtonFace;
+            button2.Location = new Point(690, 82);
+            button2.Name = "button2";
+            button2.Size = new Size(206, 41);
+            button2.TabIndex = 5;
+            button2.Text = "CARNET";
+            button2.UseVisualStyleBackColor = false;
+            // 
             // frmSocios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1022, 450);
+            ClientSize = new Size(908, 457);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
             Controls.Add(dtgvSocios);
@@ -170,5 +198,7 @@
         private DataGridViewTextBoxColumn fecha;
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn Email;
+        private Button button1;
+        private Button button2;
     }
 }

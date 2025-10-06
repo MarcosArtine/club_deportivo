@@ -28,54 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LinkLabel llblVolver;
             btnNuevoPago = new Button();
-            llblVolver = new LinkLabel();
+            btnVolver = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // llblVolver
-            // 
-            llblVolver.ActiveLinkColor = Color.Black;
-            llblVolver.AutoSize = true;
-            llblVolver.BackColor = Color.FromArgb(164, 17, 0);
-            llblVolver.ForeColor = SystemColors.AppWorkspace;
-            llblVolver.LinkColor = Color.White;
-            llblVolver.Location = new Point(26, 45);
-            llblVolver.Name = "llblVolver";
-            llblVolver.Size = new Size(74, 15);
-            llblVolver.TabIndex = 4;
-            llblVolver.TabStop = true;
-            llblVolver.Text = "<--- VOLVER";
-            llblVolver.VisitedLinkColor = Color.FromArgb(164, 17, 0);
-            llblVolver.LinkClicked += llblVolver_LinkClicked;
             // 
             // btnNuevoPago
             // 
             btnNuevoPago.BackColor = Color.FromArgb(164, 17, 0);
             btnNuevoPago.ForeColor = Color.White;
-            btnNuevoPago.Location = new Point(561, 27);
+            btnNuevoPago.Location = new Point(615, 12);
             btnNuevoPago.Name = "btnNuevoPago";
-            btnNuevoPago.Size = new Size(172, 50);
+            btnNuevoPago.Size = new Size(173, 41);
             btnNuevoPago.TabIndex = 2;
-            btnNuevoPago.Text = "Nuevo pago";
+            btnNuevoPago.Text = "NUEVO PAGO";
             btnNuevoPago.UseVisualStyleBackColor = false;
             btnNuevoPago.Click += btnNuevoPago_Click;
+            // 
+            // btnVolver
+            // 
+            btnVolver.BackColor = Color.FromArgb(192, 0, 0);
+            btnVolver.ForeColor = SystemColors.ButtonFace;
+            btnVolver.Location = new Point(12, 12);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(154, 41);
+            btnVolver.TabIndex = 5;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 77);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(776, 361);
+            dataGridView1.TabIndex = 6;
             // 
             // frmPagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(llblVolver);
+            Controls.Add(dataGridView1);
+            Controls.Add(btnVolver);
             Controls.Add(btnNuevoPago);
             Name = "frmPagos";
             Text = "Pagos";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Button btnNuevoPago;
+        private Button btnVolver;
+        private DataGridView dataGridView1;
     }
 }

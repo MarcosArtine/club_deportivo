@@ -49,12 +49,14 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(546, 286);
+            btnAgregar.BackColor = Color.FromArgb(192, 0, 0);
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Location = new Point(510, 286);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.Size = new Size(111, 37);
             btnAgregar.TabIndex = 0;
             btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // lblNombre
@@ -170,12 +172,14 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(675, 286);
+            btnLimpiar.BackColor = Color.FromArgb(192, 0, 0);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Location = new Point(641, 286);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(75, 23);
+            btnLimpiar.Size = new Size(109, 37);
             btnLimpiar.TabIndex = 19;
             btnLimpiar.Text = "Limpiar";
-            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.UseVisualStyleBackColor = false;
             // 
             // cmbTipoDoc
             // 
