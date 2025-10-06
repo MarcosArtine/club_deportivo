@@ -16,6 +16,5 @@ namespace club_deportivo.Entidades
         public string NumeroDocumento { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
-        public string TipoCliente { get; set; } // O int, si es un ID de tipo
     }
 }

@@ -64,8 +64,8 @@ namespace club_deportivo.InterfacesGraficas
             }
             catch (Exception ex)
             {
-                // Manejo de errores generales (ej. formato de fecha incorrecto si no usas DateTimePicker, etc.)
-                MessageBox.Show($"Ocurrió un error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Ahora, si el InsertarSocio lanza una excepción (como se hizo arriba), la verás aquí.
+                MessageBox.Show($"Ocurrió un error inesperado al registrar: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

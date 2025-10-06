@@ -10,38 +10,69 @@ namespace club_deportivo.Datos
     {
         public bool InsertarSocio(Socio socio)
         {
-            // La consulta INSERT SQL
-            // **IMPORTANTE**: Ajusta el nombre de la tabla (Socio) y las columnas
-            // para que coincidan con tu esquema de base de datos.
-            string consulta = "INSERT INTO Socio (nombre, apellido, tipo_documento, fecha_nacimiento, " +
-                              "numero_documento, telefono, email) " +
-                              "VALUES (@nombre, @apellido, @tipoDoc, @fechaNac, @numDoc, @tel, @email)";
-
             MySqlConnection conexion = Conexion.CrearConexion();
-            MySqlCommand comando = new MySqlCommand(consulta, conexion);
-
-            // 1. Añadir parámetros para prevenir inyección SQL y para tipado correcto
-            comando.Parameters.AddWithValue("@nombre", socio.Nombre);
-            comando.Parameters.AddWithValue("@apellido", socio.Apellido);
-            comando.Parameters.AddWithValue("@tipoDoc", socio.TipoDocumento);
-            // Formatear la fecha para MySQL (ejemplo)
-            comando.Parameters.AddWithValue("@fechaNac", socio.FechaNacimiento.ToString("yyyy-MM-dd"));
-            comando.Parameters.AddWithValue("@numDoc", socio.NumeroDocumento);
-            comando.Parameters.AddWithValue("@tel", socio.Telefono);
-            comando.Parameters.AddWithValue("@email", socio.Email);
-            //comando.Parameters.AddWithValue("@tipoCliente", socio.TipoCliente);
+            MySqlTransaction transaccion = null; // Usaremos una transacción
+            bool exito = false;
 
             try
             {
                 conexion.Open();
-                int filasAfectadas = comando.ExecuteNonQuery();
-                return filasAfectadas > 0; // Si es mayor a 0, la inserción fue exitosa
+                transaccion = conexion.BeginTransaction(); // Iniciar la transacción
+
+                string queryPersona = "INSERT INTO Persona (Nombre, Apellido, TipoDni, NroDni, FechaNacimiento, Telefono, Email) " +
+                                      "VALUES (@nombre, @apellido, @tipoDoc, @numDoc, @fechaNac, @tel, @email); " +
+                                      "SELECT LAST_INSERT_ID();"; // Obtener el ID generado
+
+                MySqlCommand cmdPersona = new MySqlCommand(queryPersona, conexion, transaccion);
+                cmdPersona.Parameters.AddWithValue("@nombre", socio.Nombre);
+                cmdPersona.Parameters.AddWithValue("@apellido", socio.Apellido);
+                cmdPersona.Parameters.AddWithValue("@tipoDoc", socio.TipoDocumento);
+                cmdPersona.Parameters.AddWithValue("@numDoc", socio.NumeroDocumento);
+                cmdPersona.Parameters.AddWithValue("@fechaNac", socio.FechaNacimiento.ToString("yyyy-MM-dd"));
+                cmdPersona.Parameters.AddWithValue("@tel", socio.Telefono);
+                cmdPersona.Parameters.AddWithValue("@email", socio.Email);
+
+                // Ejecutar y obtener el PersonaId (LAST_INSERT_ID())
+                int personaId = Convert.ToInt32(cmdPersona.ExecuteScalar());
+
+                // Aquí usaré la fecha actual como FechaAltaSocio
+                string fechaAlta = DateTime.Now.ToString("yyyy-MM-dd");
+
+           
+                string nroCarnetGenerado = personaId.ToString("D5"); 
+
+                string querySocio = "INSERT INTO Socio (SocioId, FechaAltaSocio, NroCarnet) " +
+                                    "VALUES (@socioId, @fechaAlta, @nroCarnet)";
+
+                MySqlCommand cmdSocio = new MySqlCommand(querySocio, conexion, transaccion);
+                cmdSocio.Parameters.AddWithValue("@socioId", personaId);
+                cmdSocio.Parameters.AddWithValue("@fechaAlta", fechaAlta);
+                cmdSocio.Parameters.AddWithValue("@nroCarnet", nroCarnetGenerado); // Usamos el generado
+
+                int filasSocio = cmdSocio.ExecuteNonQuery();
+
+                if (filasSocio > 0)
+                {
+                    transaccion.Commit(); // Confirmar ambas inserciones
+                    exito = true;
+                }
+                else
+                {
+                    transaccion.Rollback(); // Deshacer si la segunda parte falla
+                }
             }
             catch (MySqlException ex)
             {
-                // Manejo de errores (por ejemplo, mostrar el error)
-                System.Diagnostics.Debug.WriteLine($"Error al insertar socio: {ex.Message}");
-                return false;
+                // Si hay error, deshacer la operación
+                transaccion?.Rollback();
+
+   
+                throw new Exception("Error BD: " + ex.Message, ex);
+            }
+            catch (Exception ex)
+            {
+                transaccion?.Rollback();
+                throw new Exception("Error General: " + ex.Message, ex);
             }
             finally
             {
@@ -50,6 +81,7 @@ namespace club_deportivo.Datos
                     conexion.Close();
                 }
             }
+            return exito;
         }
     }
 }

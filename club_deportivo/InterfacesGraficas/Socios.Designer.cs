@@ -41,6 +41,7 @@
             conexionBindingSource = new BindingSource(components);
             btnAgregar = new Button();
             btnEliminar = new Button();
+     
             ((System.ComponentModel.ISupportInitialize)dtgvSocios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionBindingSource).BeginInit();
             SuspendLayout();
@@ -63,7 +64,7 @@
             // 
             dtgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvSocios.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido, TipoDoc, numDoc, fecha, Telefono, Email });
-            dtgvSocios.Location = new Point(12, 39);
+            dtgvSocios.Location = new Point(10, 34);
             dtgvSocios.Name = "dtgvSocios";
             dtgvSocios.Size = new Size(1000, 228);
             dtgvSocios.TabIndex = 1;
@@ -137,6 +138,7 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+
             // frmSocios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);

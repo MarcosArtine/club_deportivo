@@ -180,7 +180,7 @@
             // cmbTipoDoc
             // 
             cmbTipoDoc.FormattingEnabled = true;
-            cmbTipoDoc.Items.AddRange(new object[] { "Dni", "Pasaporte", "Libreta civica" });
+            cmbTipoDoc.Items.AddRange(new object[] { "DNI", "Pasaporte", "LC (Libreta civica)" });
             cmbTipoDoc.Location = new Point(179, 91);
             cmbTipoDoc.Name = "cmbTipoDoc";
             cmbTipoDoc.Size = new Size(186, 23);
