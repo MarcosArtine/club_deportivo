@@ -133,6 +133,8 @@ CREATE TABLE PagoDiario (
   FOREIGN KEY (PagoRealizadoID) REFERENCES PagoRealizado(PagoRealizadoID) -- Apunta devuelta a registro de pago
 );
 
+
+
 -- ==================================================
 --  Roles 
 -- ==================================================
