@@ -96,7 +96,7 @@ CREATE TABLE PagoRealizado (
   FechaPago DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   MontoTotal DECIMAL(10, 2) NOT NULL,
   TipoConcepto VARCHAR(50) NOT NULL, -- 'Cuota', 'Diario'
-  MedioPago VARCHAR(50) NOT NULL,
+  MedioPago VARCHAR(50) NOT NULL, -- Efectivo, tarjeta, traansferencia
   ReferenciaId INT NOT NULL -- 'SocioId', 'NoSocioId' 
 );
 
