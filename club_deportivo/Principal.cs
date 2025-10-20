@@ -65,6 +65,7 @@ namespace club_deportivo
 
         private void btnRegistro_MouseMove(object sender, MouseEventArgs e)
         {
+            // Efecto hover
             btnRegistro.BackColor = Color.FromArgb(200, 17, 0);
         }
 

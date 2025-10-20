@@ -45,13 +45,17 @@
             btnLimpiar = new Button();
             cmbTipoDoc = new ComboBox();
             dtpFechaNac = new DateTimePicker();
+            cbxActoFisico = new CheckBox();
+            lblActoFisico = new Label();
+            comboBox1 = new ComboBox();
+            label2 = new Label();
             SuspendLayout();
             // 
             // btnAgregar
             // 
             btnAgregar.BackColor = Color.FromArgb(192, 0, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(510, 286);
+            btnAgregar.Location = new Point(514, 311);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(111, 37);
             btnAgregar.TabIndex = 0;
@@ -174,12 +178,13 @@
             // 
             btnLimpiar.BackColor = Color.FromArgb(192, 0, 0);
             btnLimpiar.ForeColor = Color.White;
-            btnLimpiar.Location = new Point(641, 286);
+            btnLimpiar.Location = new Point(641, 311);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(109, 37);
             btnLimpiar.TabIndex = 19;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // cmbTipoDoc
             // 
@@ -194,14 +199,55 @@
             // 
             dtpFechaNac.Location = new Point(546, 101);
             dtpFechaNac.Name = "dtpFechaNac";
-            dtpFechaNac.Size = new Size(200, 23);
+            dtpFechaNac.Size = new Size(204, 23);
             dtpFechaNac.TabIndex = 23;
+            // 
+            // cbxActoFisico
+            // 
+            cbxActoFisico.AutoSize = true;
+            cbxActoFisico.Location = new Point(546, 256);
+            cbxActoFisico.Name = "cbxActoFisico";
+            cbxActoFisico.Size = new Size(35, 19);
+            cbxActoFisico.TabIndex = 24;
+            cbxActoFisico.Text = "SI";
+            cbxActoFisico.UseVisualStyleBackColor = true;
+            // 
+            // lblActoFisico
+            // 
+            lblActoFisico.AutoSize = true;
+            lblActoFisico.Location = new Point(403, 256);
+            lblActoFisico.Name = "lblActoFisico";
+            lblActoFisico.Size = new Size(73, 15);
+            lblActoFisico.TabIndex = 25;
+            lblActoFisico.Text = "¿Acto fisico?";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Socios", "No socios" });
+            comboBox1.Location = new Point(546, 208);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 26;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(403, 211);
+            label2.Name = "label2";
+            label2.Size = new Size(84, 15);
+            label2.TabIndex = 27;
+            label2.Text = "Tipo de cliente";
             // 
             // frmRegistro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
+            Controls.Add(comboBox1);
+            Controls.Add(lblActoFisico);
+            Controls.Add(cbxActoFisico);
             Controls.Add(dtpFechaNac);
             Controls.Add(cmbTipoDoc);
             Controls.Add(btnLimpiar);
@@ -244,5 +290,11 @@
         private Button btnLimpiar;
         private ComboBox cmbTipoDoc;
         private DateTimePicker dtpFechaNac;
+        private CheckBox checkBox1;
+        private Label label1;
+        private Label lblActoFisico;
+        private CheckBox cbxActoFisico;
+        private ComboBox comboBox1;
+        private Label label2;
     }
 }

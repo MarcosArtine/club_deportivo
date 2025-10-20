@@ -30,8 +30,8 @@
         {
             btnNuevoPago = new Button();
             btnVolver = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dtgvPagos = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dtgvPagos).BeginInit();
             SuspendLayout();
             // 
             // btnNuevoPago
@@ -58,25 +58,25 @@
             btnVolver.UseVisualStyleBackColor = false;
             btnVolver.Click += btnVolver_Click;
             // 
-            // dataGridView1
+            // dtgvPagos
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 77);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(776, 361);
-            dataGridView1.TabIndex = 6;
+            dtgvPagos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvPagos.Location = new Point(12, 77);
+            dtgvPagos.Name = "dtgvPagos";
+            dtgvPagos.Size = new Size(776, 361);
+            dtgvPagos.TabIndex = 6;
             // 
             // frmPagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(dtgvPagos);
             Controls.Add(btnVolver);
             Controls.Add(btnNuevoPago);
             Name = "frmPagos";
             Text = "Pagos";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvPagos).EndInit();
             ResumeLayout(false);
         }
 
@@ -84,6 +84,6 @@
 
         private Button btnNuevoPago;
         private Button btnVolver;
-        private DataGridView dataGridView1;
+        private DataGridView dtgvPagos;
     }
 }

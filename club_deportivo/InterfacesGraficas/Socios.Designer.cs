@@ -42,7 +42,8 @@
             btnAgregar = new Button();
             btnEliminar = new Button();
             button1 = new Button();
-            button2 = new Button();
+            btnCarnet = new Button();
+            btnModificar = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgvSocios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionBindingSource).BeginInit();
             SuspendLayout();
@@ -65,7 +66,7 @@
             // 
             dtgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvSocios.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido, TipoDoc, numDoc, fecha, Telefono, Email });
-            dtgvSocios.Location = new Point(12, 138);
+            dtgvSocios.Location = new Point(12, 146);
             dtgvSocios.Name = "dtgvSocios";
             dtgvSocios.Size = new Size(884, 240);
             dtgvSocios.TabIndex = 1;
@@ -123,7 +124,7 @@
             // 
             btnAgregar.BackColor = Color.FromArgb(192, 0, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(629, 392);
+            btnAgregar.Location = new Point(490, 392);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(133, 40);
             btnAgregar.TabIndex = 2;
@@ -154,23 +155,37 @@
             button1.Text = "EMITIR LISTADO DE MOROSOS";
             button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnCarnet
             // 
-            button2.BackColor = Color.FromArgb(192, 0, 0);
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(690, 82);
-            button2.Name = "button2";
-            button2.Size = new Size(206, 41);
-            button2.TabIndex = 5;
-            button2.Text = "CARNET";
-            button2.UseVisualStyleBackColor = false;
+            btnCarnet.BackColor = Color.FromArgb(192, 0, 0);
+            btnCarnet.ForeColor = SystemColors.ButtonFace;
+            btnCarnet.Location = new Point(690, 82);
+            btnCarnet.Name = "btnCarnet";
+            btnCarnet.Size = new Size(206, 41);
+            btnCarnet.TabIndex = 5;
+            btnCarnet.Text = "CARNET";
+            btnCarnet.UseVisualStyleBackColor = false;
+            btnCarnet.Click += btnCarnet_Click;
+            // 
+            // btnModificar
+            // 
+            btnModificar.BackColor = Color.FromArgb(192, 0, 0);
+            btnModificar.ForeColor = Color.White;
+            btnModificar.Location = new Point(629, 392);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(133, 40);
+            btnModificar.TabIndex = 6;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // frmSocios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(908, 457);
-            Controls.Add(button2);
+            Controls.Add(btnModificar);
+            Controls.Add(btnCarnet);
             Controls.Add(button1);
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
@@ -178,7 +193,6 @@
             Controls.Add(btnVolver);
             Name = "frmSocios";
             Text = "Socios";
-            Load += Socios_Load;
             ((System.ComponentModel.ISupportInitialize)dtgvSocios).EndInit();
             ((System.ComponentModel.ISupportInitialize)conexionBindingSource).EndInit();
             ResumeLayout(false);
@@ -199,6 +213,7 @@
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn Email;
         private Button button1;
-        private Button button2;
+        private Button btnCarnet;
+        private Button btnModificar;
     }
 }

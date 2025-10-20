@@ -93,7 +93,7 @@
             btnIngresar.Name = "btnIngresar";
             btnIngresar.Size = new Size(198, 49);
             btnIngresar.TabIndex = 3;
-            btnIngresar.Text = "INICIAR SECCIÓN";
+            btnIngresar.Text = "INICIAR SESIÓN";
             btnIngresar.UseVisualStyleBackColor = false;
             btnIngresar.Click += btnIngresar_Click;
             btnIngresar.MouseLeave += btnIngresar_MouseLeave;
@@ -114,7 +114,7 @@
             // 
             lblContraseña.AutoSize = true;
             lblContraseña.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblContraseña.Location = new Point(402, 208);
+            lblContraseña.Location = new Point(402, 198);
             lblContraseña.Name = "lblContraseña";
             lblContraseña.Size = new Size(100, 21);
             lblContraseña.TabIndex = 5;
@@ -132,7 +132,7 @@
             // 
             // txtPass
             // 
-            txtPass.Location = new Point(402, 232);
+            txtPass.Location = new Point(402, 222);
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(198, 23);
             txtPass.TabIndex = 7;
@@ -143,12 +143,12 @@
             // llblRecordar
             // 
             llblRecordar.AutoSize = true;
-            llblRecordar.Location = new Point(481, 272);
+            llblRecordar.Location = new Point(419, 280);
             llblRecordar.Name = "llblRecordar";
-            llblRecordar.Size = new Size(119, 15);
+            llblRecordar.Size = new Size(181, 15);
             llblRecordar.TabIndex = 8;
             llblRecordar.TabStop = true;
-            llblRecordar.Text = "Olvide mi contraseña";
+            llblRecordar.Text = "¿Quieres crear un nuevo usuario?";
             // 
             // frmLogin
             // 

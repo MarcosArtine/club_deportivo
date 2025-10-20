@@ -23,11 +23,11 @@ namespace club_deportivo.Datos
         private static Conexion? con = null;
         private Conexion() // asignamos valores a las variables de la conexion
         {
-        this.baseDatos = "Proyecto";
+        this.baseDatos = "BaseC4";
         this.servidor = "localhost";
         this.puerto = "3306";
         this.usuario = "root";
-        this.clave = "05abril1992";
+        this.clave = "05abril1992"; // <-- aquí va la clave de la base de datos
         }
         // proceso de interacción
         public static MySqlConnection CrearConexion() // AÑADIR 'static'

@@ -1,11 +1,11 @@
 
- DROP DATABASE IF EXISTS Proyecto;
- CREATE DATABASE Proyecto;
+-- DROP DATABASE IF EXISTS BaseC4;
+-- CREATE DATABASE BaseC4;
 
-USE Proyecto;
+USE BaseC4;
 
 -- ==================================================
---  Clase Persona (Herencia UML) (Superclase)
+--  Clase Persona 
 -- ==================================================
 
 -- Tabla Persona
@@ -34,13 +34,6 @@ CREATE TABLE NoSocio (
   FOREIGN KEY (NoSocioId) REFERENCES Persona(PersonaId) ON DELETE CASCADE
 );
 
--- Tabla Profesor (Staff/Actividad)
-CREATE TABLE Profesor (
-  ProfesorId INT PRIMARY KEY, -- Hereda de Persona para que no se duplique el DNI
-  Especialidad VARCHAR(100) NULL,
-  FOREIGN KEY (ProfesorId) REFERENCES Persona(PersonaId) ON DELETE CASCADE
-);
-
 
 -- ==========================================================
 --  Clase Actividad (UML) 
@@ -55,15 +48,12 @@ CREATE TABLE Actividad (
   CostoSocio DECIMAL(10, 2) NOT NULL DEFAULT 0.00 -- Añadido CostoSocio para lógica de negocio profesional
 );
 
--- Tabla Profesor_Actividad 
-CREATE TABLE Profesor_Actividad (
-  ProfesorActividadId INT AUTO_INCREMENT PRIMARY KEY,
-  ProfesorId INT NOT NULL,
-  ActividadId INT NOT NULL,
-  FOREIGN KEY (ProfesorId) REFERENCES Profesor(ProfesorId),
-  FOREIGN KEY (ActividadId) REFERENCES Actividad(ActividadId),
-  UNIQUE (ProfesorId, ActividadId)
-);
+-- Carga de datos en Actividad
+INSERT INTO Actividad (ActividadId, NombreActividad, MontoActividad, CostoSocio) 
+VALUES 
+(01, 'Natacion', 2500, 300),
+(02, 'Gym', 3000, 400);
+
 
 -- ==================================================
 --  Gestion de pagos (UML)
@@ -165,27 +155,14 @@ insert into Usuario(UsuarioId,Username,PasswordHash,EmpleadoNombre, RolId) value
 -- Inserta datos en la tabla Persona
 INSERT INTO Persona (Nombre, Apellido, TipoDni, NroDni, FechaNacimiento, Telefono, Email) VALUES
 ('Juan', 'Perez', 'DNI', '12345678', '1990-05-15', '1122334455', 'juan.perez@email.com'), -- ID 1 (Socio)
-('Maria', 'Gomez', 'Pasaporte', 'P987654', '1985-10-20', '1166778899', 'maria.gomez@email.com'), -- ID 2 (No Socio)
-('Carlos', 'Lopez', 'DNI', '25874136', '2001-01-01', '1144556677', 'carlos.lopez@email.com'), -- ID 3 (Socio)
-('Ana', 'Diaz', 'LC', '30215478', '1975-12-03', '1199887766', 'ana.diaz@email.com'); -- ID 4 (No Socio)
+('Carlos', 'Lopez', 'DNI', '25874136', '2001-01-01', '1144556677', 'carlos.lopez@email.com');-- ID 2 (Socio)
 
----
--- Insertar Socios (Asumiendo que los primeros IDs generados en Persona son 1 y 3)
--- **IMPORTANTE**: Los valores de SocioId deben coincidir con los PersonaId insertados.
--- Si usas MySQL Workbench o una herramienta similar, verifica los ID's generados.
--- En este ejemplo, asumimos que PersonaId = 1 y PersonaId = 3 son Socios.
 ---
 INSERT INTO Socio (SocioId, FechaAltaSocio, NroCarnet) VALUES
 (1, '2023-01-10', '0001'), -- Juan Perez es el Socio ID 1
-(3, '2023-03-25', '0002'); -- Carlos Lopez es el Socio ID 3
+(2, '2023-03-25', '0002'); -- Carlos Lopez es el Socio ID 2
 
----
--- Insertar No Socios (Asumiendo que los IDs generados en Persona son 2 y 4)
--- En este ejemplo, asumimos que PersonaId = 2 y PersonaId = 4 son No Socios.
----
-INSERT INTO NoSocio (NoSocioId) VALUES
-(2), -- Maria Gomez es la No Socio ID 2
-(4); -- Ana Diaz es la No Socio ID 4
+
 
 
 

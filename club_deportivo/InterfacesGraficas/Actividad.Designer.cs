@@ -29,45 +29,22 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            dataGridView1 = new DataGridView();
-            idActividad = new DataGridViewTextBoxColumn();
-            nombreActividad = new DataGridViewTextBoxColumn();
-            montoActividad = new DataGridViewTextBoxColumn();
+            dtgvActividad = new DataGridView();
             conexionBindingSource = new BindingSource(components);
             btnVolver = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnEliminar = new Button();
+            btnAgregar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dtgvActividad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionBindingSource).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dtgvActividad
             // 
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idActividad, nombreActividad, montoActividad });
-            dataGridView1.DataSource = conexionBindingSource;
-            dataGridView1.Location = new Point(12, 88);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(776, 271);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // idActividad
-            // 
-            idActividad.HeaderText = "Id";
-            idActividad.Name = "idActividad";
-            idActividad.Width = 200;
-            // 
-            // nombreActividad
-            // 
-            nombreActividad.HeaderText = "Actividad";
-            nombreActividad.Name = "nombreActividad";
-            nombreActividad.Width = 200;
-            // 
-            // montoActividad
-            // 
-            montoActividad.HeaderText = "costo";
-            montoActividad.Name = "montoActividad";
-            montoActividad.Width = 200;
+            dtgvActividad.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvActividad.Location = new Point(12, 88);
+            dtgvActividad.Name = "dtgvActividad";
+            dtgvActividad.Size = new Size(935, 271);
+            dtgvActividad.TabIndex = 0;
             // 
             // conexionBindingSource
             // 
@@ -85,28 +62,50 @@
             btnVolver.UseVisualStyleBackColor = false;
             btnVolver.Click += btnVolver_Click;
             // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.FromArgb(192, 0, 0);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(800, 384);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(147, 44);
+            btnEliminar.TabIndex = 2;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.BackColor = Color.FromArgb(192, 0, 0);
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Location = new Point(607, 384);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(144, 44);
+            btnAgregar.TabIndex = 3;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = false;
+            // 
             // frmActividad
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(959, 450);
+            Controls.Add(btnAgregar);
+            Controls.Add(btnEliminar);
             Controls.Add(btnVolver);
-            Controls.Add(dataGridView1);
+            Controls.Add(dtgvActividad);
             Name = "frmActividad";
             Text = "Actividad";
-            Load += frmActividad_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvActividad).EndInit();
             ((System.ComponentModel.ISupportInitialize)conexionBindingSource).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dtgvActividad;
         private BindingSource conexionBindingSource;
-        private DataGridViewTextBoxColumn idActividad;
-        private DataGridViewTextBoxColumn nombreActividad;
-        private DataGridViewTextBoxColumn montoActividad;
         private Button btnVolver;
+        private Button btnEliminar;
+        private Button btnAgregar;
     }
 }
