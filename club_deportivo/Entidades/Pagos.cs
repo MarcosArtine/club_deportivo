@@ -1,4 +1,14 @@
-﻿using club_deportivo.Datos;
+/* * Si vas a usar PagoCuotaDTO.cs este archivo no sive.
+ * ----------------------------------------------------------------------
+ * RAZÓN: La Capa de Entidades solo debe contener MODELOS DE DATOS (DTOs),
+ * y esta clase contiene LÓGICA DE ACCESO A DATOS (conexiones, comandos SQL).
+ * Esta estructura rompe el diseño en capas (Arquitectura de 3 Capas).
+ * * ¿DÓNDE ESTÁ ESTA LÓGICA AHORA?
+ * El método para LISTAR CLIENTES se ha movido a la Capa de DATOS (PagoDatos.cs) 
+ * o a otra clase de Datos, y se llama desde la Capa de GESTIÓN (G_Pagos.cs).
+ * ----------------------------------------------------------------------
+ */
+using club_deportivo.Datos;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
